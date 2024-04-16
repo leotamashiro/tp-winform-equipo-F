@@ -1,8 +1,8 @@
 namespace CATALOGO
 {
-    public partial class Form1 : Form
+    public partial class vtPrincipal : Form
     {
-        public Form1()
+        public vtPrincipal()
         {
             InitializeComponent();
         }
