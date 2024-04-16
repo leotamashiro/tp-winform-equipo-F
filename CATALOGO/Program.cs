@@ -12,6 +12,22 @@ namespace CATALOGO
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             Application.Run(new Form1());
+
+            //Articulo articuloPrueba = new Articulo("AA00", "Tablet S9", "Tablet de 6 pulgadas");
+
+            // Creo una lista de articulos 
+            List<Articulo> articulos = new List<Articulo>();
+
+            // ======= Agrego objecto articulo a la lista Articulos  ======= //
+
+            //articulos.Add(articuloPrueba);
+
+            // ======= Se podria listar con esto => LISTADO DE ARTICULOS ======= //
+            foreach (Articulo articulo in articulos)
+            {
+                    
+            }
+
         }
     }
 }

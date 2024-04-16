@@ -8,19 +8,19 @@
     "net8.0-windows7.0": []
   },
   "packageFolders": {
-    "C:\\Users\\leota\\.nuget\\packages\\": {}
+    "C:\\Users\\Marco\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\leota\\OneDrive\\Escritorio\\UTN Leo\\Pacheco\\Pacheco\\Progra 3\\Actividad 2\\CATALOGO\\CATALOGO.csproj",
+      "projectUniqueName": "F:\\Marco\\Source\\repos\\CATALOGO\\CATALOGO.csproj",
       "projectName": "CATALOGO",
-      "projectPath": "C:\\Users\\leota\\OneDrive\\Escritorio\\UTN Leo\\Pacheco\\Pacheco\\Progra 3\\Actividad 2\\CATALOGO\\CATALOGO.csproj",
-      "packagesPath": "C:\\Users\\leota\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\leota\\OneDrive\\Escritorio\\UTN Leo\\Pacheco\\Pacheco\\Progra 3\\Actividad 2\\CATALOGO\\obj\\",
+      "projectPath": "F:\\Marco\\Source\\repos\\CATALOGO\\CATALOGO.csproj",
+      "packagesPath": "C:\\Users\\Marco\\.nuget\\packages\\",
+      "outputPath": "F:\\Marco\\Source\\repos\\CATALOGO\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\leota\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "F:\\Marco\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -69,7 +69,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

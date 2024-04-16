@@ -12,7 +12,7 @@
       }
     ],
     "additionalProbingPaths": [
-      "C:\\Users\\leota\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\Marco\\.dotnet\\store\\|arch|\\|tfm|",
       "C:\\Users\\leota\\.nuget\\packages"
     ],
     "configProperties": {
