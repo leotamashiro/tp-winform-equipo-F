@@ -8,19 +8,19 @@
     "net8.0-windows7.0": []
   },
   "packageFolders": {
-    "C:\\Users\\Marco\\.nuget\\packages\\": {}
+    "C:\\Users\\gasto\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\Marco\\Source\\repos\\CATALOGO\\CATALOGO.csproj",
+      "projectUniqueName": "D:\\Repositorios Github\\TP 2 - Catalogo\\CATALOGO\\CATALOGO.csproj",
       "projectName": "CATALOGO",
-      "projectPath": "F:\\Marco\\Source\\repos\\CATALOGO\\CATALOGO.csproj",
-      "packagesPath": "C:\\Users\\Marco\\.nuget\\packages\\",
-      "outputPath": "F:\\Marco\\Source\\repos\\CATALOGO\\obj\\",
+      "projectPath": "D:\\Repositorios Github\\TP 2 - Catalogo\\CATALOGO\\CATALOGO.csproj",
+      "packagesPath": "C:\\Users\\gasto\\.nuget\\packages\\",
+      "outputPath": "D:\\Repositorios Github\\TP 2 - Catalogo\\CATALOGO\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "F:\\Marco\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\gasto\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -69,7 +69,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

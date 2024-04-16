@@ -1,9 +1,9 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "F:\\Marco\\Source\\repos\\CATALOGO\\",
+  "WorkspaceRootPath": "D:\\Repositorios Github\\TP 2 - Catalogo\\CATALOGO\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B21AA9A4-03BF-4B12-ADC4-C3F775B77B4E}|CATALOGO.csproj|f:\\marco\\source\\repos\\catalogo\\articulo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{B21AA9A4-03BF-4B12-ADC4-C3F775B77B4E}|CATALOGO.csproj|d:\\repositorios github\\tp 2 - catalogo\\catalogo\\articulo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B21AA9A4-03BF-4B12-ADC4-C3F775B77B4E}|CATALOGO.csproj|solutionrelative:articulo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -14,17 +14,21 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Articulo.cs",
-              "DocumentMoniker": "F:\\Marco\\Source\\repos\\CATALOGO\\Articulo.cs",
+              "DocumentMoniker": "D:\\Repositorios Github\\TP 2 - Catalogo\\CATALOGO\\Articulo.cs",
               "RelativeDocumentMoniker": "Articulo.cs",
-              "ToolTip": "F:\\Marco\\Source\\repos\\CATALOGO\\Articulo.cs",
+              "ToolTip": "D:\\Repositorios Github\\TP 2 - Catalogo\\CATALOGO\\Articulo.cs",
               "RelativeToolTip": "Articulo.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAABcAAAAIAAAA",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAABAAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-16T22:57:33.85Z",
               "EditorCaption": ""
