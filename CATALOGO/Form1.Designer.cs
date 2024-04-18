@@ -41,7 +41,7 @@
             // 
             // btnListadoArt
             // 
-            btnListadoArt.Location = new Point(210, 151);
+            btnListadoArt.Location = new Point(54, 135);
             btnListadoArt.Name = "btnListadoArt";
             btnListadoArt.Size = new Size(209, 29);
             btnListadoArt.TabIndex = 0;
@@ -51,9 +51,9 @@
             // statusStrip1
             // 
             statusStrip1.ImageScalingSize = new Size(20, 20);
-            statusStrip1.Location = new Point(0, 448);
+            statusStrip1.Location = new Point(0, 384);
             statusStrip1.Name = "statusStrip1";
-            statusStrip1.Size = new Size(639, 22);
+            statusStrip1.Size = new Size(322, 22);
             statusStrip1.TabIndex = 2;
             statusStrip1.Text = "statusStrip1";
             // 
@@ -65,16 +65,18 @@
             // 
             // lblMenu
             // 
+            lblMenu.Anchor = AnchorStyles.Top;
             lblMenu.AutoSize = true;
-            lblMenu.Location = new Point(294, 111);
+            lblMenu.Font = new Font("Segoe UI", 12F);
+            lblMenu.Location = new Point(131, 89);
             lblMenu.Name = "lblMenu";
-            lblMenu.Size = new Size(46, 20);
+            lblMenu.Size = new Size(62, 28);
             lblMenu.TabIndex = 5;
             lblMenu.Text = "Menu";
             // 
             // btnBusArt
             // 
-            btnBusArt.Location = new Point(210, 186);
+            btnBusArt.Location = new Point(54, 170);
             btnBusArt.Name = "btnBusArt";
             btnBusArt.Size = new Size(209, 29);
             btnBusArt.TabIndex = 6;
@@ -83,7 +85,7 @@
             // 
             // btnAgregArt
             // 
-            btnAgregArt.Location = new Point(210, 221);
+            btnAgregArt.Location = new Point(54, 205);
             btnAgregArt.Name = "btnAgregArt";
             btnAgregArt.Size = new Size(209, 29);
             btnAgregArt.TabIndex = 7;
@@ -92,7 +94,7 @@
             // 
             // btnModArt
             // 
-            btnModArt.Location = new Point(210, 256);
+            btnModArt.Location = new Point(54, 240);
             btnModArt.Name = "btnModArt";
             btnModArt.Size = new Size(209, 29);
             btnModArt.TabIndex = 8;
@@ -101,7 +103,7 @@
             // 
             // btnElemArt
             // 
-            btnElemArt.Location = new Point(210, 291);
+            btnElemArt.Location = new Point(54, 275);
             btnElemArt.Name = "btnElemArt";
             btnElemArt.Size = new Size(209, 29);
             btnElemArt.TabIndex = 9;
@@ -112,7 +114,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(639, 470);
+            ClientSize = new Size(322, 406);
             Controls.Add(btnElemArt);
             Controls.Add(btnModArt);
             Controls.Add(btnAgregArt);
@@ -121,6 +123,7 @@
             Controls.Add(statusStrip1);
             Controls.Add(btnListadoArt);
             Margin = new Padding(3, 4, 3, 4);
+            MaximumSize = new Size(340, 453);
             Name = "vtPrincipal";
             Text = "Catálogo";
             Load += Form1_Load;
