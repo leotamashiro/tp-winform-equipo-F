@@ -47,11 +47,12 @@
             btnListadoArt.TabIndex = 0;
             btnListadoArt.Text = "Listado de artículos";
             btnListadoArt.UseVisualStyleBackColor = true;
+            btnListadoArt.Click += btnListadoArt_Click;
             // 
             // statusStrip1
             // 
             statusStrip1.ImageScalingSize = new Size(20, 20);
-            statusStrip1.Location = new Point(0, 384);
+            statusStrip1.Location = new Point(0, 381);
             statusStrip1.Name = "statusStrip1";
             statusStrip1.Size = new Size(322, 22);
             statusStrip1.TabIndex = 2;
@@ -68,11 +69,11 @@
             lblMenu.Anchor = AnchorStyles.Top;
             lblMenu.AutoSize = true;
             lblMenu.Font = new Font("Segoe UI", 12F);
-            lblMenu.Location = new Point(131, 89);
+            lblMenu.Location = new Point(131, 86);
             lblMenu.Name = "lblMenu";
             lblMenu.Size = new Size(62, 28);
             lblMenu.TabIndex = 5;
-            lblMenu.Text = "Menu";
+            lblMenu.Text = "Menú";
             // 
             // btnBusArt
             // 
@@ -82,6 +83,7 @@
             btnBusArt.TabIndex = 6;
             btnBusArt.Text = "Búsqueda de artículos";
             btnBusArt.UseVisualStyleBackColor = true;
+            btnBusArt.Click += btnBusArt_Click;
             // 
             // btnAgregArt
             // 
@@ -114,7 +116,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(322, 406);
+            ClientSize = new Size(322, 403);
             Controls.Add(btnElemArt);
             Controls.Add(btnModArt);
             Controls.Add(btnAgregArt);
@@ -123,8 +125,10 @@
             Controls.Add(statusStrip1);
             Controls.Add(btnListadoArt);
             Margin = new Padding(3, 4, 3, 4);
-            MaximumSize = new Size(340, 453);
+            MaximumSize = new Size(340, 450);
+            MinimumSize = new Size(340, 450);
             Name = "vtPrincipal";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Catálogo";
             Load += Form1_Load;
             ResumeLayout(false);

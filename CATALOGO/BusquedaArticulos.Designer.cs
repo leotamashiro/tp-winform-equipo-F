@@ -1,6 +1,6 @@
 ﻿namespace CATALOGO
 {
-    partial class ListadoArticulos
+    partial class BusquedaArticulos
     {
         /// <summary>
         /// Required designer variable.
@@ -30,13 +30,13 @@
         {
             SuspendLayout();
             // 
-            // ListadoArticulos
+            // BusquedaArticulos
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Name = "ListadoArticulos";
-            Text = "Lista de artículos";
+            Name = "BusquedaArticulos";
+            Text = "Busquedor de artículos";
             ResumeLayout(false);
         }
 

@@ -11,5 +11,17 @@ namespace CATALOGO
         {
 
         }
+
+        private void btnListadoArt_Click(object sender, EventArgs e)
+        {
+            ListadoArticulos ventana = new ListadoArticulos();
+            ventana.ShowDialog();
+        }
+
+        private void btnBusArt_Click(object sender, EventArgs e)
+        {
+            BusquedaArticulos ventana = new BusquedaArticulos();
+            ventana.ShowDialog();
+        }
     }
 }
