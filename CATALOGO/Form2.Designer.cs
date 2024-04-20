@@ -154,6 +154,7 @@
             btnConfirmar.TabIndex = 20;
             btnConfirmar.Text = "CONFIRMAR";
             btnConfirmar.UseVisualStyleBackColor = true;
+            btnConfirmar.Click += btnConfirmar_Click;
             // 
             // btnCancelar
             // 
