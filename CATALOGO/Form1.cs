@@ -23,5 +23,11 @@ namespace CATALOGO
             BusquedaArticulos ventana = new BusquedaArticulos();
             ventana.ShowDialog();
         }
+
+        private void btnAgregArt_Click(object sender, EventArgs e)
+        {
+            frmAgregar alta = new frmAgregar(); 
+            alta.ShowDialog(); 
+        }
     }
 }

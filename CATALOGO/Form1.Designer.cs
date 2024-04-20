@@ -41,9 +41,10 @@
             // 
             // btnListadoArt
             // 
-            btnListadoArt.Location = new Point(54, 135);
+            btnListadoArt.Location = new Point(47, 101);
+            btnListadoArt.Margin = new Padding(3, 2, 3, 2);
             btnListadoArt.Name = "btnListadoArt";
-            btnListadoArt.Size = new Size(209, 29);
+            btnListadoArt.Size = new Size(183, 22);
             btnListadoArt.TabIndex = 0;
             btnListadoArt.Text = "Listado de artículos";
             btnListadoArt.UseVisualStyleBackColor = true;
@@ -52,9 +53,10 @@
             // statusStrip1
             // 
             statusStrip1.ImageScalingSize = new Size(20, 20);
-            statusStrip1.Location = new Point(0, 381);
+            statusStrip1.Location = new Point(0, 286);
             statusStrip1.Name = "statusStrip1";
-            statusStrip1.Size = new Size(322, 22);
+            statusStrip1.Padding = new Padding(1, 0, 12, 0);
+            statusStrip1.Size = new Size(284, 22);
             statusStrip1.TabIndex = 2;
             statusStrip1.Text = "statusStrip1";
             // 
@@ -69,17 +71,18 @@
             lblMenu.Anchor = AnchorStyles.Top;
             lblMenu.AutoSize = true;
             lblMenu.Font = new Font("Segoe UI", 12F);
-            lblMenu.Location = new Point(131, 86);
+            lblMenu.Location = new Point(115, 64);
             lblMenu.Name = "lblMenu";
-            lblMenu.Size = new Size(62, 28);
+            lblMenu.Size = new Size(50, 21);
             lblMenu.TabIndex = 5;
             lblMenu.Text = "Menú";
             // 
             // btnBusArt
             // 
-            btnBusArt.Location = new Point(54, 170);
+            btnBusArt.Location = new Point(47, 128);
+            btnBusArt.Margin = new Padding(3, 2, 3, 2);
             btnBusArt.Name = "btnBusArt";
-            btnBusArt.Size = new Size(209, 29);
+            btnBusArt.Size = new Size(183, 22);
             btnBusArt.TabIndex = 6;
             btnBusArt.Text = "Búsqueda de artículos";
             btnBusArt.UseVisualStyleBackColor = true;
@@ -87,36 +90,40 @@
             // 
             // btnAgregArt
             // 
-            btnAgregArt.Location = new Point(54, 205);
+            btnAgregArt.Location = new Point(47, 154);
+            btnAgregArt.Margin = new Padding(3, 2, 3, 2);
             btnAgregArt.Name = "btnAgregArt";
-            btnAgregArt.Size = new Size(209, 29);
+            btnAgregArt.Size = new Size(183, 22);
             btnAgregArt.TabIndex = 7;
             btnAgregArt.Text = "Agregar artículos";
             btnAgregArt.UseVisualStyleBackColor = true;
+            btnAgregArt.Click += btnAgregArt_Click;
             // 
             // btnModArt
             // 
-            btnModArt.Location = new Point(54, 240);
+            btnModArt.Location = new Point(47, 180);
+            btnModArt.Margin = new Padding(3, 2, 3, 2);
             btnModArt.Name = "btnModArt";
-            btnModArt.Size = new Size(209, 29);
+            btnModArt.Size = new Size(183, 22);
             btnModArt.TabIndex = 8;
             btnModArt.Text = "Modificar artículos";
             btnModArt.UseVisualStyleBackColor = true;
             // 
             // btnElemArt
             // 
-            btnElemArt.Location = new Point(54, 275);
+            btnElemArt.Location = new Point(47, 206);
+            btnElemArt.Margin = new Padding(3, 2, 3, 2);
             btnElemArt.Name = "btnElemArt";
-            btnElemArt.Size = new Size(209, 29);
+            btnElemArt.Size = new Size(183, 22);
             btnElemArt.TabIndex = 9;
             btnElemArt.Text = "Eliminar articulos";
             btnElemArt.UseVisualStyleBackColor = true;
             // 
             // vtPrincipal
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(322, 403);
+            ClientSize = new Size(284, 308);
             Controls.Add(btnElemArt);
             Controls.Add(btnModArt);
             Controls.Add(btnAgregArt);
@@ -124,9 +131,8 @@
             Controls.Add(lblMenu);
             Controls.Add(statusStrip1);
             Controls.Add(btnListadoArt);
-            Margin = new Padding(3, 4, 3, 4);
-            MaximumSize = new Size(340, 450);
-            MinimumSize = new Size(340, 450);
+            MaximumSize = new Size(300, 347);
+            MinimumSize = new Size(300, 347);
             Name = "vtPrincipal";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Catálogo";
