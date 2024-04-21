@@ -10,10 +10,11 @@ namespace CATALOGO
     internal class Articulo
     {
         // Constructor default
-        public Articulo(string codigo, string nombre, string descripcion, Marca marca, Categoria categoria, Imagen imagen, decimal precio)
+        public Articulo(int id, string codigo, string nombre, string descripcion, Marca marca, Categoria categoria, Imagen imagen, decimal precio)
         {}
 
         // Propiedades del articulo
+        public int id { get; set; }
         public string codigo { get; set; }
         public string nombre{ get; set; }
         public string descripcion{ get; set; }

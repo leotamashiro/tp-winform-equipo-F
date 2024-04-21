@@ -10,17 +10,17 @@ namespace CATALOGO
     {
         // Propiedades
         private int id;
-        private string nombre;
+        private string descripcion;
 
         // Getters y setters 
         public int Id {
             get { return id; } 
             set {  id = value; }
         }
-        public string Nombre
+        public string Descripcion
         {
-            get { return nombre; }
-            set { nombre = value; }
+            get { return descripcion; }
+            set { descripcion = value; }
         }
 
     }
