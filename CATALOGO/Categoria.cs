@@ -13,15 +13,15 @@ namespace CATALOGO
         private string descripcion;
 
         // Getters y setters 
-        public int Id {
-            get { return id; } 
-            set {  id = value; }
+        public int Id
+        {
+            get { return id; }
+            set { id = value; }
         }
         public string Descripcion
         {
             get { return descripcion; }
             set { descripcion = value; }
         }
-
     }
 }

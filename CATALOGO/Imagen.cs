@@ -21,5 +21,5 @@ namespace CATALOGO
             get { return url; }
             set { url = value; }
         }
-    }   
+    }
 }

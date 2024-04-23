@@ -20,6 +20,7 @@ namespace CATALOGO
         }
         public string Descripcion
         {
+
             get { return descripcion; }
             set { descripcion = value; }
         }
