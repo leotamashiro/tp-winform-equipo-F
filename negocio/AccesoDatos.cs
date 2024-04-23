@@ -5,9 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 
+using CATALOGO;
+
 namespace negocio
 {
-    internal class AccesoDatos
+    public class AccesoDatos
     {
         private SqlConnection conexion;
         private SqlCommand comando;
@@ -33,6 +35,22 @@ namespace negocio
             catch (Exception ex)
             {
 
+                throw ex;
+            }
+        }
+
+        public void leerArticuloPorID()
+        {
+            int id = 1;
+            try
+            {
+                //Articulo articulo = new Articulo();
+                //articulo.id = id;
+                comando.CommandText = "Select * FROM Articulos WHERE Id = " + id;
+                
+            }
+            catch (Exception ex)
+            {
                 throw ex;
             }
         }

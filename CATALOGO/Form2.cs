@@ -32,14 +32,14 @@ namespace CATALOGO
 
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
-            Articulo articulo = new Articulo();
+            //Articulo articulo = new Articulo();
 
-
+            articulo.id = 0;
             articulo.nombre = txtNombre.Text;
             articulo.codigo = txtCodArticulo.Text;
             articulo.descripcion = txtDescripcion.Text; 
             articulo.precio = decimal.Parse(txtPrecio.Text);
-            articulo.imagen= txtUrl.Text;
+            //articulo.imagen= (Imagen);
             articulo.Categoria = (Categoria)cboCategoria.SelectedItem;
             articulo.Marca = (Marca)cboMarca.SelectedItem;
         }

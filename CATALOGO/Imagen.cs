@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CATALOGO
 {
-    internal class Imagen
+    public class Imagen
     {
         private int codigo;
         private string url;

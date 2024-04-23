@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CATALOGO
 {
-    internal class Marca
+    public class Marca
     {
         // Propiedades
         private int id;

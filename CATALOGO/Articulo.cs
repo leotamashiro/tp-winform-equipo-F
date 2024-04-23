@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CATALOGO
 {
-    internal class Articulo
+    public class Articulo
     {
         // Constructor default
         public Articulo(int id, string codigo, string nombre, string descripcion, Marca marca, Categoria categoria, Imagen imagen, decimal precio)

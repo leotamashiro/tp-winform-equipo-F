@@ -118,6 +118,7 @@
             volverListadoBtn.TabIndex = 7;
             volverListadoBtn.Text = "Volver";
             volverListadoBtn.UseVisualStyleBackColor = true;
+            volverListadoBtn.Click += volverListadoBtn_Click;
             // 
             // eliminarArtBtn
             // 
