@@ -27,7 +27,7 @@ namespace CATALOGO
                 datos.cerrarConexion();
             }
         }
-
+        // ver el tema de las catagoria y marca
         public void modificar(Articulo art)
         {
             AccesoDatos datos = new AccesoDatos();
