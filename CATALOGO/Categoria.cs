@@ -6,22 +6,22 @@ using System.Threading.Tasks;
 
 namespace CATALOGO
 {
-    internal class Categoria
+    public class Categoria
     {
         // Propiedades
         private int id;
         private string descripcion;
 
         // Getters y setters 
-        public int Id {
-            get { return id; } 
-            set {  id = value; }
+        public int Id
+        {
+            get { return id; }
+            set { id = value; }
         }
         public string Descripcion
         {
             get { return descripcion; }
             set { descripcion = value; }
         }
-
     }
 }

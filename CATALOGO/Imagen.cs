@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CATALOGO
 {
-    internal class Imagen
+    public class Imagen
     {
         private int codigo;
         private string url;
@@ -21,5 +21,5 @@ namespace CATALOGO
             get { return url; }
             set { url = value; }
         }
-    }   
+    }
 }
