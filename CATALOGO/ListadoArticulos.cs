@@ -29,14 +29,14 @@ namespace CATALOGO
                 // Aquí, puedes obtener el artículo seleccionado y mostrar sus detalles
                 // Suponiendo que tienes una lista de Articulos llamada listaArticulos
                 Articulo articulo = (Articulo)row.DataBoundItem;
-                MostrarDetalleArticulo(articulo, e.RowIndex);
+                MostrarDetalleArticulo(articulo.ID);
             }
         }
-        private void MostrarDetalleArticulo(Articulo articulo, int rowIndex)
+        private void MostrarDetalleArticulo(int id)
         {
             try
             {
-                DetalleArticulo detalleForm = new DetalleArticulo(articulo);
+                DetalleArticulo detalleForm = new DetalleArticulo(id);
                 detalleForm.ShowDialog();
             }
             catch (Exception ex)

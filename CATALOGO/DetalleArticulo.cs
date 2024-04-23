@@ -14,16 +14,20 @@ namespace CATALOGO
     public partial class DetalleArticulo : Form
     {
         private Articulo _articulo;
-        public DetalleArticulo(Articulo articulo)
+        private int _id;
+        public DetalleArticulo(int id)
         {
             InitializeComponent();
-            _articulo = articulo;
+            _id = id;
         }
+
+        ArticuloService articuloService = new ArticuloService();
 
         private void DetalleArticulo_Load(object sender, EventArgs e)
         {
             try
             {
+                _articulo = articuloService.listarArticuloXID(_id);
                 codigoInput.Text = _articulo.CODIGO;
                 nombreInput.Text = _articulo.NOMBRE;
                 descInput.Text = _articulo.DESCRIPCION;

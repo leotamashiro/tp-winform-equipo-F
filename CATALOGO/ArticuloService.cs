@@ -9,6 +9,7 @@ using negocio;
 using System.Reflection;
 using static System.ComponentModel.Design.ObjectSelectorEditor;
 using System.Windows.Forms;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace CATALOGO
 {
@@ -88,10 +89,7 @@ namespace CATALOGO
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.setearConsulta("SELECT A.*, M.Descripcion AS MarcaDescripcion, C.Descripcion AS CategoriaDescripcion, I.* FROM ARTICULOS A " +
-                                     "INNER JOIN MARCAS M ON A.IdMarca = M.Id " +
-                                     "INNER JOIN CATEGORIAS C ON A.IdCategoria = C.Id " +
-                                     "INNER JOIN IMAGENES I ON A.Id = I.Id");
+                datos.setearConsulta("SELECT A.*, M.Descripcion AS MarcaDescripcion, C.Descripcion AS CategoriaDescripcion, I.* FROM ARTICULOS A INNER JOIN MARCAS M ON A.IdMarca = M.Id INNER JOIN CATEGORIAS C ON A.IdCategoria = C.Id INNER JOIN IMAGENES I ON A.Id = I.IdArticulo");
                 datos.ejecutarLectura();
 
                 while (datos.Lector.Read())
@@ -130,6 +128,59 @@ namespace CATALOGO
             {
                 datos.cerrarConexion();
             }
+        }
+
+        public Articulo listarArticuloXID(int id)
+        {
+            Articulo articulo = null;
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta("SELECT A.*, M.Descripcion AS MarcaDescripcion, CA.Descripcion AS CategoriaDescripcion, I.* " +
+                                     "FROM ARTICULOS A " +
+                                     "INNER JOIN MARCAS M ON A.IdMarca = M.Id " +
+                                     "INNER JOIN CATEGORIAS CA ON A.IdCategoria = CA.Id " +
+                                     "INNER JOIN IMAGENES I ON A.Id = I.IdArticulo " +
+                                     "WHERE A.Id = @Id");
+                datos.setearParametro("@Id", id);
+                datos.ejecutarLectura();
+
+                if (datos.Lector.Read())
+                {
+                    articulo = new Articulo
+                    {
+                        ID = Convert.ToInt32(datos.Lector["Id"]),
+                        CODIGO = datos.Lector["Codigo"].ToString(),
+                        NOMBRE = datos.Lector["Nombre"].ToString(),
+                        DESCRIPCION = datos.Lector["Descripcion"].ToString(),
+                        PRECIO = Convert.ToDecimal(datos.Lector["Precio"]),
+                        Marca = new Marca
+                        {
+                            Id = Convert.ToInt32(datos.Lector["IdMarca"]),
+                            Descripcion = datos.Lector["MarcaDescripcion"].ToString()
+                        },
+                        Categoria = new Categoria
+                        {
+                            Id = Convert.ToInt32(datos.Lector["IdCategoria"]),
+                            Descripcion = datos.Lector["CategoriaDescripcion"].ToString()
+                        },
+                        Imagen = new Imagen
+                        {
+                            Codigo = Convert.ToInt32(datos.Lector["IdArticulo"]),
+                            Url = datos.Lector["ImagenUrl"].ToString()
+                        }
+                    };
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+            return articulo;
         }
 
     }
