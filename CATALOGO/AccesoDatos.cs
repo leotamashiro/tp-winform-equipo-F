@@ -65,22 +65,6 @@ namespace negocio
 
         }
 
-        public void leerArticuloPorID()
-        {
-            int id = 1;
-            try
-            {
-                //Articulo articulo = new Articulo();
-                //articulo.id = id;
-                comando.CommandText = "Select * FROM Articulos WHERE Id = " + id;
-                
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
-
         public void cerrarConexion()
         {
             if (lector != null)

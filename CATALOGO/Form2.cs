@@ -34,11 +34,11 @@ namespace CATALOGO
         {
             //Articulo articulo = new Articulo();
 
-            articulo.id = 0;
-            articulo.nombre = txtNombre.Text;
-            articulo.codigo = txtCodArticulo.Text;
-            articulo.descripcion = txtDescripcion.Text; 
-            articulo.precio = decimal.Parse(txtPrecio.Text);
+            articulo.ID = 0;
+            articulo.NOMBRE = txtNombre.Text;
+            articulo.CODIGO = txtCodArticulo.Text;
+            articulo.DESCRIPCION = txtDescripcion.Text; 
+            articulo.PRECIO = decimal.Parse(txtPrecio.Text);
             //articulo.imagen= (Imagen);
             articulo.Categoria = (Categoria)cboCategoria.SelectedItem;
             articulo.Marca = (Marca)cboMarca.SelectedItem;

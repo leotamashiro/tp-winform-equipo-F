@@ -130,6 +130,7 @@
             eliminarArtBtn.TabIndex = 8;
             eliminarArtBtn.Text = "Eliminar Articulo";
             eliminarArtBtn.UseVisualStyleBackColor = false;
+            eliminarArtBtn.Click += eliminarArtBtn_Click;
             // 
             // codigoInput
             // 

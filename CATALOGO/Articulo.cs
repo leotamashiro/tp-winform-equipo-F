@@ -10,19 +10,16 @@ namespace CATALOGO
 {
     public class Articulo
     {
-        // Constructor default
-        public Articulo(int id, string codigo, string nombre, string descripcion, Marca marca, Categoria categoria, Imagen imagen, decimal precio)
-        { }
 
         // Propiedades del articulo
-        public int id { get; set; }
-        public string codigo { get; set; }
-        public string nombre { get; set; }
-        public string descripcion { get; set; }
+        public int ID { get; set; }
+        public string CODIGO { get; set; }
+        public string NOMBRE { get; set; }
+        public string DESCRIPCION { get; set; }
         public Marca Marca { get; set; }
         public Categoria Categoria { get; set; }
-        public Imagen imagen { get; set; }
-        public decimal precio { get; set; }
+        public Imagen Imagen { get; set; }
+        public decimal PRECIO { get; set; }
 
     }
 }
