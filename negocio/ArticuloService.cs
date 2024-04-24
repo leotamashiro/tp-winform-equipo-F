@@ -4,16 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
-
-using negocio;
 using System.Reflection;
-using static System.ComponentModel.Design.ObjectSelectorEditor;
-using System.Windows.Forms;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
-namespace CATALOGO
+using dominio;
+
+namespace negocio
 {
-    internal class ArticuloService
+    public class ArticuloService
     {
         private List<Articulo> _listaArticulos;
         public ArticuloService()

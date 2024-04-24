@@ -9,6 +9,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using dominio;
+using negocio;
+
 namespace CATALOGO
 {
     public partial class DetalleArticulo : Form

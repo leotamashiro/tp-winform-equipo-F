@@ -7,11 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\dominio\dominio.csproj" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.6" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CATALOGO\CATALOGO.csproj" />
+    <ProjectReference Include="..\dominio\dominio.csproj" />
   </ItemGroup>
 
 </Project>
