@@ -69,13 +69,8 @@ namespace CATALOGO
             {
                 try
                 {
-                    // Eliminar el artículo de la lista de artículos
-                    //listaArticulos.Remove(_articulo);
+                    articuloService.eliminarArticulo(_articulo.ID);
                     MessageBox.Show("Articulo eliminado correctamente!");
-                    // Actualizar la vista del DataGridView
-                    //ActualizarDataGridView();
-
-                    // Cerrar el formulario DetalleArticulo
                     this.Close();
                 }
                 catch (Exception ex)
