@@ -54,7 +54,6 @@
             nombreLabel.Size = new Size(54, 15);
             nombreLabel.TabIndex = 0;
             nombreLabel.Text = "Nombre:";
-            nombreLabel.Click += label1_Click;
             // 
             // codigoLabel
             // 
@@ -64,7 +63,6 @@
             codigoLabel.Size = new Size(49, 15);
             codigoLabel.TabIndex = 1;
             codigoLabel.Text = "Codigo:";
-            codigoLabel.Click += label2_Click;
             // 
             // descLabel
             // 
@@ -98,6 +96,7 @@
             imagenDetalle.Location = new Point(456, 47);
             imagenDetalle.Name = "imagenDetalle";
             imagenDetalle.Size = new Size(271, 285);
+            imagenDetalle.SizeMode = PictureBoxSizeMode.StretchImage;
             imagenDetalle.TabIndex = 5;
             imagenDetalle.TabStop = false;
             // 

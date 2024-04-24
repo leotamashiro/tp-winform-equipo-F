@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -26,7 +27,7 @@ namespace CATALOGO
 
         ArticuloService articuloService = new ArticuloService();
 
-        private void DetalleArticulo_Load(object sender, EventArgs e)
+        private async void DetalleArticulo_Load(object sender, EventArgs e)
         {
             try
             {
@@ -37,6 +38,7 @@ namespace CATALOGO
                 marcaInput.Text = _articulo.MARCA.Descripcion.ToString();
                 categoriaInput.Text = _articulo.CATEGORIA.Descripcion.ToString();
                 precioInput.Text = _articulo.PRECIO.ToString();
+                CargarImagen(_articulo.IMAGEN.Url.ToString());
             }
             catch (Exception ex)
             {
@@ -44,14 +46,16 @@ namespace CATALOGO
             }
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private async Task CargarImagen(string url)
         {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
+            try
+            {
+                imagenDetalle.Load(url);
+            }
+            catch (Exception ex)
+            {
+                imagenDetalle.Load("https://img.freepik.com/vector-premium/vector-icono-imagen-predeterminado-pagina-imagen-faltante-diseno-sitio-web-o-aplicacion-movil-no-hay-foto-disponible_87543-11093.jpg");
+            }
         }
 
         private void volverListadoBtn_Click(object sender, EventArgs e)
