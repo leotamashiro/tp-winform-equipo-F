@@ -60,6 +60,7 @@
             dataGridView1.Margin = new Padding(3, 2, 3, 2);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
+            dataGridView1.AutoGenerateColumns = false;
             dataGridView1.Size = new Size(802, 392);
             dataGridView1.TabIndex = 0;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
@@ -69,6 +70,7 @@
             Col_ID.HeaderText = "ID";
             Col_ID.MinimumWidth = 6;
             Col_ID.Name = "Col_ID";
+            Col_ID.DataPropertyName = "ID";
             Col_ID.ReadOnly = true;
             Col_ID.Width = 125;
             // 
@@ -77,6 +79,7 @@
             ColNombre.HeaderText = "Nombre";
             ColNombre.MinimumWidth = 6;
             ColNombre.Name = "ColNombre";
+            ColNombre.DataPropertyName = "NOMBRE";
             ColNombre.ReadOnly = true;
             ColNombre.Width = 125;
             // 
@@ -85,6 +88,7 @@
             Col_Descrip.HeaderText = "Descripción";
             Col_Descrip.MinimumWidth = 6;
             Col_Descrip.Name = "Col_Descrip";
+            Col_Descrip.DataPropertyName = "DESCRIPCION";
             Col_Descrip.ReadOnly = true;
             Col_Descrip.Width = 125;
             // 
@@ -93,6 +97,7 @@
             Col_marca.HeaderText = "Marca";
             Col_marca.MinimumWidth = 6;
             Col_marca.Name = "Col_marca";
+            Col_marca.DataPropertyName = "MARCA.Descripcion";
             Col_marca.ReadOnly = true;
             Col_marca.Width = 125;
             // 
@@ -101,6 +106,7 @@
             Col_Categoria.HeaderText = "Categoria";
             Col_Categoria.MinimumWidth = 6;
             Col_Categoria.Name = "Col_Categoria";
+            Col_Categoria.DataPropertyName = "CATEGORIA.Descripcion";
             Col_Categoria.ReadOnly = true;
             Col_Categoria.Width = 125;
             // 
@@ -109,6 +115,7 @@
             Col_Img.HeaderText = "Imagen";
             Col_Img.MinimumWidth = 6;
             Col_Img.Name = "Col_Img";
+            Col_Img.DataPropertyName = "IMAGEN.ImagenUrl";
             Col_Img.ReadOnly = true;
             Col_Img.Width = 125;
             // 
@@ -117,6 +124,7 @@
             Col_Precio.HeaderText = "Precio";
             Col_Precio.MinimumWidth = 6;
             Col_Precio.Name = "Col_Precio";
+            Col_Precio.DataPropertyName = "PRECIO";
             Col_Precio.ReadOnly = true;
             Col_Precio.Width = 125;
             // 

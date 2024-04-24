@@ -40,8 +40,8 @@ namespace CATALOGO
             articulo.DESCRIPCION = txtDescripcion.Text; 
             articulo.PRECIO = decimal.Parse(txtPrecio.Text);
             //articulo.imagen= (Imagen);
-            articulo.Categoria = (Categoria)cboCategoria.SelectedItem;
-            articulo.Marca = (Marca)cboMarca.SelectedItem;
+            articulo.CATEGORIA = (Categoria)cboCategoria.SelectedItem;
+            articulo.MARCA = (Marca)cboMarca.SelectedItem;
         }
     }
 }

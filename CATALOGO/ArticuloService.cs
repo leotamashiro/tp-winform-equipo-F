@@ -26,7 +26,7 @@ namespace CATALOGO
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.setearConsulta("INSERT INTO ARTICULOS (Codigo,Nombre,Descripcion,Precio,ImagenUrl) VALUES ('" + art.CODIGO + "','" + art.NOMBRE + "','" + art.DESCRIPCION + "','" + art.PRECIO + "','" + art.Imagen);
+                datos.setearConsulta("INSERT INTO ARTICULOS (Codigo,Nombre,Descripcion,Precio,ImagenUrl) VALUES ('" + art.CODIGO + "','" + art.NOMBRE + "','" + art.DESCRIPCION + "','" + art.PRECIO + "','" + art.IMAGEN);
                 datos.ejecutarAccion();
             }
             catch (Exception ex)
@@ -49,7 +49,7 @@ namespace CATALOGO
                 datos.setearParametro("@nombre", art.NOMBRE);
                 datos.setearParametro("@descripcion", art.DESCRIPCION);
                 datos.setearParametro("@precio", art.PRECIO);
-                datos.setearParametro("@img", art.Imagen);
+                datos.setearParametro("@img", art.IMAGEN);
                 datos.setearParametro("@id", art.ID);
                 datos.ejecutarAccion();
             }
@@ -86,37 +86,43 @@ namespace CATALOGO
         public List<Articulo> ListarArticulos()
         {
             List<Articulo> lista = new List<Articulo>();
+            Articulo articulo = null;
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.setearConsulta("SELECT A.*, M.Descripcion AS MarcaDescripcion, C.Descripcion AS CategoriaDescripcion, I.* FROM ARTICULOS A INNER JOIN MARCAS M ON A.IdMarca = M.Id INNER JOIN CATEGORIAS C ON A.IdCategoria = C.Id INNER JOIN IMAGENES I ON A.Id = I.IdArticulo");
+                datos.setearConsulta("SELECT A.*, M.Descripcion AS MarcaDescripcion, CA.Descripcion AS CategoriaDescripcion, I.* " +
+                      "FROM ARTICULOS A " +
+                      "INNER JOIN MARCAS M ON A.IdMarca = M.Id " +
+                      "INNER JOIN CATEGORIAS CA ON A.IdCategoria = CA.Id " +
+                      "INNER JOIN IMAGENES I ON A.Id = I.IdArticulo ");
                 datos.ejecutarLectura();
 
                 while (datos.Lector.Read())
                 {
-                    lista.Add(new Articulo
+                    articulo = new Articulo
                     {
                         ID = Convert.ToInt32(datos.Lector["Id"]),
                         CODIGO = datos.Lector["Codigo"].ToString(),
                         NOMBRE = datos.Lector["Nombre"].ToString(),
                         DESCRIPCION = datos.Lector["Descripcion"].ToString(),
                         PRECIO = Convert.ToDecimal(datos.Lector["Precio"]),
-                        Marca = new Marca
+                        MARCA = new Marca
                         {
                             Id = Convert.ToInt32(datos.Lector["IdMarca"]),
                             Descripcion = datos.Lector["MarcaDescripcion"].ToString()
                         },
-                        Categoria = new Categoria
+                        CATEGORIA = new Categoria
                         {
                             Id = Convert.ToInt32(datos.Lector["IdCategoria"]),
-                            Descripcion = datos.Lector["Descripcion"].ToString()
+                            Descripcion = datos.Lector["CategoriaDescripcion"].ToString()
                         },
-                        Imagen = new Imagen
+                        IMAGEN = new Imagen
                         {
                             Codigo = Convert.ToInt32(datos.Lector["IdArticulo"]),
                             Url = datos.Lector["ImagenUrl"].ToString()
                         }
-                    });
+                    };
+                    lista.Add(articulo);
                 }
                 return lista;
             }
@@ -154,17 +160,17 @@ namespace CATALOGO
                         NOMBRE = datos.Lector["Nombre"].ToString(),
                         DESCRIPCION = datos.Lector["Descripcion"].ToString(),
                         PRECIO = Convert.ToDecimal(datos.Lector["Precio"]),
-                        Marca = new Marca
+                        MARCA = new Marca
                         {
                             Id = Convert.ToInt32(datos.Lector["IdMarca"]),
                             Descripcion = datos.Lector["MarcaDescripcion"].ToString()
                         },
-                        Categoria = new Categoria
+                        CATEGORIA = new Categoria
                         {
                             Id = Convert.ToInt32(datos.Lector["IdCategoria"]),
                             Descripcion = datos.Lector["CategoriaDescripcion"].ToString()
                         },
-                        Imagen = new Imagen
+                        IMAGEN = new Imagen
                         {
                             Codigo = Convert.ToInt32(datos.Lector["IdArticulo"]),
                             Url = datos.Lector["ImagenUrl"].ToString()

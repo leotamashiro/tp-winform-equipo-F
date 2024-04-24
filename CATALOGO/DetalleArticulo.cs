@@ -31,8 +31,8 @@ namespace CATALOGO
                 codigoInput.Text = _articulo.CODIGO;
                 nombreInput.Text = _articulo.NOMBRE;
                 descInput.Text = _articulo.DESCRIPCION;
-                marcaInput.Text = _articulo.Marca.Descripcion.ToString();
-                categoriaInput.Text = _articulo.Categoria.Descripcion.ToString();
+                marcaInput.Text = _articulo.MARCA.Descripcion.ToString();
+                categoriaInput.Text = _articulo.CATEGORIA.Descripcion.ToString();
                 precioInput.Text = _articulo.PRECIO.ToString();
             }
             catch (Exception ex)
