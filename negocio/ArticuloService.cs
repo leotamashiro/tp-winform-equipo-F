@@ -84,43 +84,28 @@ namespace negocio
         public List<Articulo> ListarArticulos()
         {
             List<Articulo> lista = new List<Articulo>();
-            Articulo articulo = null;
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.setearConsulta("SELECT A.*, M.Descripcion AS MarcaDescripcion, CA.Descripcion AS CategoriaDescripcion, I.* " +
-                      "FROM ARTICULOS A " +
-                      "INNER JOIN MARCAS M ON A.IdMarca = M.Id " +
-                      "INNER JOIN CATEGORIAS CA ON A.IdCategoria = CA.Id " +
-                      "INNER JOIN IMAGENES I ON A.Id = I.IdArticulo ");
+                datos.setearConsulta("SELECT A.Id, A.Codigo, A.Nombre, A.Descripcion, M.Descripcion AS Marca, C.Descripcion AS Categoria, A.Precio, I.ImagenUrl FROM ARTICULOS A INNER JOIN MARCAS M ON A.IdMarca = M.Id INNER JOIN CATEGORIAS C ON A.IdCategoria = C.Id INNER JOIN IMAGENES I ON A.Id = I.IdArticulo; ");
                 datos.ejecutarLectura();
 
                 while (datos.Lector.Read())
                 {
-                    articulo = new Articulo
-                    {
-                        ID = Convert.ToInt32(datos.Lector["Id"]),
-                        CODIGO = datos.Lector["Codigo"].ToString(),
-                        NOMBRE = datos.Lector["Nombre"].ToString(),
-                        DESCRIPCION = datos.Lector["Descripcion"].ToString(),
-                        PRECIO = Convert.ToDecimal(datos.Lector["Precio"]),
-                        MARCA = new Marca
-                        {
-                            Id = Convert.ToInt32(datos.Lector["IdMarca"]),
-                            Descripcion = datos.Lector["MarcaDescripcion"].ToString()
-                        },
-                        CATEGORIA = new Categoria
-                        {
-                            Id = Convert.ToInt32(datos.Lector["IdCategoria"]),
-                            Descripcion = datos.Lector["CategoriaDescripcion"].ToString()
-                        },
-                        IMAGEN = new Imagen
-                        {
-                            Codigo = Convert.ToInt32(datos.Lector["IdArticulo"]),
-                            Url = datos.Lector["ImagenUrl"].ToString()
-                        }
-                    };
-                    lista.Add(articulo);
+                    Articulo aux = new Articulo();
+                    aux.ID = Convert.ToInt32(datos.Lector["Id"]);
+                    aux.CODIGO = (string)datos.Lector["Codigo"];
+                    aux.NOMBRE = (string)datos.Lector["Nombre"];
+                    aux.DESCRIPCION = (string)datos.Lector["Descripcion"];
+                    aux.PRECIO = (decimal)datos.Lector["Precio"];
+                    aux.MARCA = new Marca();
+                    aux.MARCA.Descripcion = (string)datos.Lector["Marca"];
+                    aux.CATEGORIA = new Categoria();
+                    aux.CATEGORIA.Descripcion = (string)datos.Lector["Categoria"];
+                    aux.IMAGEN = new Imagen();
+                    aux.IMAGEN.Url = (string)datos.Lector["ImagenUrl"];
+
+                    lista.Add(aux);
                 }
                 return lista;
             }

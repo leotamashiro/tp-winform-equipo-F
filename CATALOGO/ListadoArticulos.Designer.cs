@@ -97,7 +97,7 @@
             Col_marca.HeaderText = "Marca";
             Col_marca.MinimumWidth = 6;
             Col_marca.Name = "Col_marca";
-            Col_marca.DataPropertyName = "MARCA.Descripcion";
+            Col_marca.DataPropertyName = "MARCA";
             Col_marca.ReadOnly = true;
             Col_marca.Width = 125;
             // 
@@ -106,7 +106,7 @@
             Col_Categoria.HeaderText = "Categoria";
             Col_Categoria.MinimumWidth = 6;
             Col_Categoria.Name = "Col_Categoria";
-            Col_Categoria.DataPropertyName = "CATEGORIA.Descripcion";
+            Col_Categoria.DataPropertyName = "CATEGORIA";
             Col_Categoria.ReadOnly = true;
             Col_Categoria.Width = 125;
             // 
@@ -115,7 +115,7 @@
             Col_Img.HeaderText = "Imagen";
             Col_Img.MinimumWidth = 6;
             Col_Img.Name = "Col_Img";
-            Col_Img.DataPropertyName = "IMAGEN.ImagenUrl";
+            Col_Img.DataPropertyName = "IMAGEN";
             Col_Img.ReadOnly = true;
             Col_Img.Width = 125;
             // 
@@ -134,6 +134,7 @@
             Col_Detalle.MinimumWidth = 6;
             Col_Detalle.Name = "Col_Detalle";
             Col_Detalle.UseColumnTextForButtonValue = true;
+            Col_Detalle.Text = "Ver Detalle";
             Col_Detalle.Width = 125;
             // 
             // textBox1

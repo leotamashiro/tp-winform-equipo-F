@@ -24,5 +24,9 @@ namespace dominio
             get { return descripcion; }
             set { descripcion = value; }
         }
+        public override string ToString()
+        {
+            return descripcion;
+        }
     }
 }

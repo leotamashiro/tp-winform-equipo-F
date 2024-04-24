@@ -21,5 +21,10 @@ namespace dominio
             get { return url; }
             set { url = value; }
         }
+
+        public override string ToString()
+        {
+            return url;
+        }
     }
 }
