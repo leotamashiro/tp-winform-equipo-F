@@ -24,17 +24,7 @@ namespace CATALOGO
         }
 
         ArticuloService articuloService = new ArticuloService();
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex >= 0)
-            {
-                DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
-                // Aquí, puedes obtener el artículo seleccionado y mostrar sus detalles
-                // Suponiendo que tienes una lista de Articulos llamada listaArticulos
-                Articulo articulo = (Articulo)row.DataBoundItem;
-                MostrarDetalleArticulo(articulo.ID);
-            }
-        }
+       
         private void MostrarDetalleArticulo(int id)
         {
             try
@@ -62,6 +52,8 @@ namespace CATALOGO
             CargarImagen(articuloSeleccionado.IMAGEN.Url);
         }
 
+        
+
         private void CargarImagen(string URLimagen)
         {
             try
@@ -72,6 +64,12 @@ namespace CATALOGO
             {
                 picBoxArticulo.Load("https://media.istockphoto.com/id/1409329028/vector/no-picture-available-placeholder-thumbnail-icon-illustration-design.jpg?s=612x612&w=0&k=20&c=_zOuJu755g2eEUioiOUdz_mHKJQJn-tDgIAhQzyeKUQ=");
             }
+        }
+
+        private void buttonVerDetalle(object sender, EventArgs e)
+        {
+            Articulo articuloSeleccionado = (Articulo)dataGridView1.CurrentRow.DataBoundItem;
+            MostrarDetalleArticulo(articuloSeleccionado.ID);
         }
     }
 }
