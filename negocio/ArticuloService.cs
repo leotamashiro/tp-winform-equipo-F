@@ -97,7 +97,7 @@ namespace negocio
                     aux.CODIGO = (string)datos.Lector["Codigo"];
                     aux.NOMBRE = (string)datos.Lector["Nombre"];
                     aux.DESCRIPCION = (string)datos.Lector["Descripcion"];
-                    aux.PRECIO = (decimal)datos.Lector["Precio"];
+                    aux.PRECIO = Math.Truncate(100 * (decimal)datos.Lector["Precio"]) / 100;
                     aux.MARCA = new Marca();
                     aux.MARCA.Descripcion = (string)datos.Lector["Marca"];
                     aux.CATEGORIA = new Categoria();

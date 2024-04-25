@@ -37,7 +37,7 @@ namespace CATALOGO
                 descInput.Text = _articulo.DESCRIPCION;
                 marcaInput.Text = _articulo.MARCA.Descripcion.ToString();
                 categoriaInput.Text = _articulo.CATEGORIA.Descripcion.ToString();
-                precioInput.Text = _articulo.PRECIO.ToString();
+                precioInput.Text = string.Format("{0:0.00}", _articulo.PRECIO);
                 CargarImagen(_articulo.IMAGEN.Url.ToString());
             }
             catch (Exception ex)
