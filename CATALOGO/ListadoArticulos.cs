@@ -22,7 +22,7 @@ namespace CATALOGO
         {
             InitializeComponent();
         }
-        
+
         ArticuloService articuloService = new ArticuloService();
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -53,7 +53,25 @@ namespace CATALOGO
             listarArticulo = articuloService.ListarArticulos();
             dataGridView1.DataSource = listarArticulo;
             dataGridView1.AutoResizeColumns();
+            CargarImagen(listarArticulo[0].IMAGEN.Url);
+        }
 
+        private void dataGridView1_SelectionChanged(object sender, EventArgs e)
+        {
+            Articulo articuloSeleccionado = (Articulo)dataGridView1.CurrentRow.DataBoundItem;
+            CargarImagen(articuloSeleccionado.IMAGEN.Url);
+        }
+
+        private void CargarImagen(string URLimagen)
+        {
+            try
+            {
+                picBoxArticulo.Load(URLimagen);
+            }
+            catch (Exception ex)
+            {
+                picBoxArticulo.Load("https://media.istockphoto.com/id/1409329028/vector/no-picture-available-placeholder-thumbnail-icon-illustration-design.jpg?s=612x612&w=0&k=20&c=_zOuJu755g2eEUioiOUdz_mHKJQJn-tDgIAhQzyeKUQ=");
+            }
         }
     }
 }
