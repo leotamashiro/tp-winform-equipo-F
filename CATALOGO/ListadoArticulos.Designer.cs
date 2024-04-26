@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            textBox1 = new TextBox();
-            button1 = new Button();
+            txtBuscador = new TextBox();
+            btnBuscar = new Button();
             archivoToolStripMenuItem = new ToolStripMenuItem();
             descargarTablaToolStripMenuItem = new ToolStripMenuItem();
             vistaActualToolStripMenuItem = new ToolStripMenuItem();
@@ -46,21 +46,22 @@
             ((System.ComponentModel.ISupportInitialize)picBoxArticulo).BeginInit();
             SuspendLayout();
             // 
-            // textBox1
+            // txtBuscador
             // 
-            textBox1.Location = new Point(741, 33);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(188, 27);
-            textBox1.TabIndex = 3;
+            txtBuscador.Location = new Point(866, 54);
+            txtBuscador.Name = "txtBuscador";
+            txtBuscador.Size = new Size(188, 27);
+            txtBuscador.TabIndex = 3;
             // 
-            // button1
+            // btnBuscar
             // 
-            button1.Location = new Point(653, 31);
-            button1.Name = "button1";
-            button1.Size = new Size(79, 29);
-            button1.TabIndex = 4;
-            button1.Text = "Buscar";
-            button1.UseVisualStyleBackColor = true;
+            btnBuscar.Location = new Point(781, 52);
+            btnBuscar.Name = "btnBuscar";
+            btnBuscar.Size = new Size(79, 29);
+            btnBuscar.TabIndex = 4;
+            btnBuscar.Text = "Buscar";
+            btnBuscar.UseVisualStyleBackColor = true;
+            btnBuscar.Click += btnBuscar_Click;
             // 
             // archivoToolStripMenuItem
             // 
@@ -159,8 +160,8 @@
             Controls.Add(button2);
             Controls.Add(picBoxArticulo);
             Controls.Add(dataGridView1);
-            Controls.Add(button1);
-            Controls.Add(textBox1);
+            Controls.Add(btnBuscar);
+            Controls.Add(txtBuscador);
             Controls.Add(menuStrip1);
             MainMenuStrip = menuStrip1;
             Name = "ListadoArticulos";
@@ -175,8 +176,8 @@
         }
 
         #endregion
-        private TextBox textBox1;
-        private Button button1;
+        private TextBox txtBuscador;
+        private Button btnBuscar;
         private ToolStripMenuItem archivoToolStripMenuItem;
         private MenuStrip menuStrip1;
         private ToolStripMenuItem descargarTablaToolStripMenuItem;

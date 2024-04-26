@@ -24,7 +24,7 @@ namespace CATALOGO
         }
 
         ArticuloService articuloService = new ArticuloService();
-       
+
         private void MostrarDetalleArticulo(int id)
         {
             try
@@ -54,7 +54,7 @@ namespace CATALOGO
             CargarImagen(articuloSeleccionado.IMAGEN.Url);
         }
 
-        
+
 
         private void CargarImagen(string URLimagen)
         {
@@ -72,6 +72,11 @@ namespace CATALOGO
         {
             Articulo articuloSeleccionado = (Articulo)dataGridView1.CurrentRow.DataBoundItem;
             MostrarDetalleArticulo(articuloSeleccionado.ID);
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }
