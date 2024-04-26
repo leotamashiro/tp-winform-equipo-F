@@ -39,25 +39,25 @@
             agregarArticuloToolStripMenuItem = new ToolStripMenuItem();
             eliminarArticuloToolStripMenuItem = new ToolStripMenuItem();
             dataGridView1 = new DataGridView();
-            picBoxArticulo = new PictureBox();
             button2 = new Button();
             menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)picBoxArticulo).BeginInit();
             SuspendLayout();
             // 
             // txtBuscador
             // 
-            txtBuscador.Location = new Point(866, 54);
+            txtBuscador.Anchor = AnchorStyles.Top;
+            txtBuscador.Location = new Point(580, 49);
             txtBuscador.Name = "txtBuscador";
-            txtBuscador.Size = new Size(188, 27);
+            txtBuscador.Size = new Size(193, 27);
             txtBuscador.TabIndex = 3;
             // 
             // btnBuscar
             // 
-            btnBuscar.Location = new Point(781, 52);
+            btnBuscar.Anchor = AnchorStyles.Top;
+            btnBuscar.Location = new Point(496, 49);
             btnBuscar.Name = "btnBuscar";
-            btnBuscar.Size = new Size(79, 29);
+            btnBuscar.Size = new Size(78, 29);
             btnBuscar.TabIndex = 4;
             btnBuscar.Text = "Buscar";
             btnBuscar.UseVisualStyleBackColor = true;
@@ -96,7 +96,7 @@
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Padding = new Padding(6, 3, 0, 3);
-            menuStrip1.Size = new Size(1066, 30);
+            menuStrip1.Size = new Size(785, 30);
             menuStrip1.TabIndex = 2;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -126,27 +126,18 @@
             dataGridView1.Location = new Point(11, 91);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(679, 332);
+            dataGridView1.Size = new Size(762, 306);
             dataGridView1.TabIndex = 5;
             dataGridView1.SelectionChanged += dataGridView1_SelectionChanged;
             // 
-            // picBoxArticulo
-            // 
-            picBoxArticulo.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            picBoxArticulo.Location = new Point(719, 139);
-            picBoxArticulo.Name = "picBoxArticulo";
-            picBoxArticulo.Size = new Size(335, 240);
-            picBoxArticulo.SizeMode = PictureBoxSizeMode.StretchImage;
-            picBoxArticulo.TabIndex = 6;
-            picBoxArticulo.TabStop = false;
-            // 
             // button2
             // 
+            button2.Anchor = AnchorStyles.Top;
             button2.BackColor = Color.FromArgb(255, 255, 128);
-            button2.Location = new Point(555, 457);
+            button2.Location = new Point(580, 404);
             button2.Margin = new Padding(3, 4, 3, 4);
             button2.Name = "button2";
-            button2.Size = new Size(135, 56);
+            button2.Size = new Size(185, 56);
             button2.TabIndex = 7;
             button2.Text = "Ver Detalle";
             button2.UseVisualStyleBackColor = false;
@@ -156,9 +147,8 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1066, 544);
+            ClientSize = new Size(785, 518);
             Controls.Add(button2);
-            Controls.Add(picBoxArticulo);
             Controls.Add(dataGridView1);
             Controls.Add(btnBuscar);
             Controls.Add(txtBuscador);
@@ -170,7 +160,6 @@
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)picBoxArticulo).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -187,7 +176,6 @@
         private ToolStripMenuItem agregarArticuloToolStripMenuItem;
         private ToolStripMenuItem eliminarArticuloToolStripMenuItem;
         private DataGridView dataGridView1;
-        private PictureBox picBoxArticulo;
         private Button button2;
     }
 }

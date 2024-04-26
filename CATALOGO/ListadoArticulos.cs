@@ -18,12 +18,12 @@ namespace CATALOGO
 
         private List<Articulo> listarArticulo;
 
+        ArticuloService articuloService = new ArticuloService();
+
         public ListadoArticulos()
         {
             InitializeComponent();
         }
-
-        ArticuloService articuloService = new ArticuloService();
 
         private void MostrarDetalleArticulo(int id)
         {
@@ -40,12 +40,10 @@ namespace CATALOGO
 
         private void ListadoArticulos_Load(object sender, EventArgs e)
         {
-            listarArticulo = articuloService.ListarArticulos();
+            listarArticulo = cargar();
             dataGridView1.DataSource = listarArticulo;
-            dataGridView1.AutoResizeColumns();
-            dataGridView1.Columns["IMAGEN"].Visible = false;
-            dataGridView1.Columns["DESCRIPCION"].Visible = false;
-            CargarImagen(listarArticulo[0].IMAGEN.Url);
+            ocultarColumnas();
+            //CargarImagen(listarArticulo[0].IMAGEN.Url);
         }
 
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
@@ -58,14 +56,14 @@ namespace CATALOGO
 
         private void CargarImagen(string URLimagen)
         {
-            try
-            {
-                picBoxArticulo.Load(URLimagen);
-            }
-            catch (Exception ex)
-            {
-                picBoxArticulo.Load("https://media.istockphoto.com/id/1409329028/vector/no-picture-available-placeholder-thumbnail-icon-illustration-design.jpg?s=612x612&w=0&k=20&c=_zOuJu755g2eEUioiOUdz_mHKJQJn-tDgIAhQzyeKUQ=");
-            }
+            //try
+            //{
+            //    picBoxArticulo.Load(URLimagen);
+            //}
+            //catch (Exception ex)
+            //{
+            //    picBoxArticulo.Load("https://media.istockphoto.com/id/1409329028/vector/no-picture-available-placeholder-thumbnail-icon-illustration-design.jpg?s=612x612&w=0&k=20&c=_zOuJu755g2eEUioiOUdz_mHKJQJn-tDgIAhQzyeKUQ=");
+            //}
         }
 
         private void buttonVerDetalle(object sender, EventArgs e)
@@ -74,9 +72,36 @@ namespace CATALOGO
             MostrarDetalleArticulo(articuloSeleccionado.ID);
         }
 
+        private List<Articulo> cargar()
+        {
+            return articuloService.ListarArticulos();
+        }
+
+        private void ocultarColumnas()
+        {
+            dataGridView1.Columns["IMAGEN"].Visible = false;
+            dataGridView1.Columns["DESCRIPCION"].Visible = false;
+        }
+
         private void btnBuscar_Click(object sender, EventArgs e)
         {
+            string filtro = txtBuscador.Text;
+
+            List<Articulo> listarArticuloFiltrada;
+
+            if (filtro != "")
+            {
+                listarArticuloFiltrada = listarArticulo.FindAll(articulo=>articulo.NOMBRE.ToUpper().Contains(filtro.ToUpper()) 
+                || articulo.CATEGORIA.Descripcion.ToUpper().Contains(filtro.ToUpper()) 
+                || articulo.MARCA.Descripcion.ToUpper().Contains(filtro.ToUpper())
+                || articulo.CODIGO.ToUpper().Contains(filtro.ToUpper()));
+            }
+            else { listarArticuloFiltrada = listarArticulo; }
+
+            dataGridView1.DataSource = null;
+            dataGridView1.DataSource = listarArticuloFiltrada;
             
+            ocultarColumnas();
         }
     }
 }
