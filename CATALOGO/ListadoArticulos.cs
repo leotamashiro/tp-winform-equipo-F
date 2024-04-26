@@ -43,6 +43,8 @@ namespace CATALOGO
             listarArticulo = articuloService.ListarArticulos();
             dataGridView1.DataSource = listarArticulo;
             dataGridView1.AutoResizeColumns();
+            dataGridView1.Columns["IMAGEN"].Visible = false;
+            dataGridView1.Columns["DESCRIPCION"].Visible = false;
             CargarImagen(listarArticulo[0].IMAGEN.Url);
         }
 
