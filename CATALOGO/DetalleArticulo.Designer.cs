@@ -49,53 +49,54 @@
             // nombreLabel
             // 
             nombreLabel.AutoSize = true;
-            nombreLabel.Location = new Point(117, 88);
+            nombreLabel.Location = new Point(134, 117);
             nombreLabel.Name = "nombreLabel";
-            nombreLabel.Size = new Size(54, 15);
+            nombreLabel.Size = new Size(67, 20);
             nombreLabel.TabIndex = 0;
             nombreLabel.Text = "Nombre:";
             // 
             // codigoLabel
             // 
             codigoLabel.AutoSize = true;
-            codigoLabel.Location = new Point(117, 47);
+            codigoLabel.Location = new Point(134, 63);
             codigoLabel.Name = "codigoLabel";
-            codigoLabel.Size = new Size(49, 15);
+            codigoLabel.Size = new Size(61, 20);
             codigoLabel.TabIndex = 1;
             codigoLabel.Text = "Codigo:";
             // 
             // descLabel
             // 
             descLabel.AutoSize = true;
-            descLabel.Location = new Point(117, 134);
+            descLabel.Location = new Point(134, 179);
             descLabel.Name = "descLabel";
-            descLabel.Size = new Size(72, 15);
+            descLabel.Size = new Size(90, 20);
             descLabel.TabIndex = 2;
             descLabel.Text = "Descripcion:";
             // 
             // marcaLabel
             // 
             marcaLabel.AutoSize = true;
-            marcaLabel.Location = new Point(117, 229);
+            marcaLabel.Location = new Point(134, 305);
             marcaLabel.Name = "marcaLabel";
-            marcaLabel.Size = new Size(43, 15);
+            marcaLabel.Size = new Size(53, 20);
             marcaLabel.TabIndex = 3;
             marcaLabel.Text = "Marca:";
             // 
             // categoriaLabel
             // 
             categoriaLabel.AutoSize = true;
-            categoriaLabel.Location = new Point(117, 266);
+            categoriaLabel.Location = new Point(134, 355);
             categoriaLabel.Name = "categoriaLabel";
-            categoriaLabel.Size = new Size(61, 15);
+            categoriaLabel.Size = new Size(77, 20);
             categoriaLabel.TabIndex = 4;
             categoriaLabel.Text = "Categoria:";
             // 
             // imagenDetalle
             // 
-            imagenDetalle.Location = new Point(456, 47);
+            imagenDetalle.Location = new Point(521, 63);
+            imagenDetalle.Margin = new Padding(3, 4, 3, 4);
             imagenDetalle.Name = "imagenDetalle";
-            imagenDetalle.Size = new Size(271, 285);
+            imagenDetalle.Size = new Size(310, 380);
             imagenDetalle.SizeMode = PictureBoxSizeMode.StretchImage;
             imagenDetalle.TabIndex = 5;
             imagenDetalle.TabStop = false;
@@ -103,17 +104,18 @@
             // precioLabel
             // 
             precioLabel.AutoSize = true;
-            precioLabel.Location = new Point(117, 309);
+            precioLabel.Location = new Point(134, 412);
             precioLabel.Name = "precioLabel";
-            precioLabel.Size = new Size(46, 15);
+            precioLabel.Size = new Size(57, 20);
             precioLabel.TabIndex = 6;
             precioLabel.Text = "Precio: ";
             // 
             // volverListadoBtn
             // 
-            volverListadoBtn.Location = new Point(117, 392);
+            volverListadoBtn.Location = new Point(134, 523);
+            volverListadoBtn.Margin = new Padding(3, 4, 3, 4);
             volverListadoBtn.Name = "volverListadoBtn";
-            volverListadoBtn.Size = new Size(120, 46);
+            volverListadoBtn.Size = new Size(137, 61);
             volverListadoBtn.TabIndex = 7;
             volverListadoBtn.Text = "Volver";
             volverListadoBtn.UseVisualStyleBackColor = true;
@@ -123,9 +125,10 @@
             // 
             eliminarArtBtn.BackColor = Color.Red;
             eliminarArtBtn.ForeColor = Color.White;
-            eliminarArtBtn.Location = new Point(607, 392);
+            eliminarArtBtn.Location = new Point(694, 523);
+            eliminarArtBtn.Margin = new Padding(3, 4, 3, 4);
             eliminarArtBtn.Name = "eliminarArtBtn";
-            eliminarArtBtn.Size = new Size(120, 46);
+            eliminarArtBtn.Size = new Size(137, 61);
             eliminarArtBtn.TabIndex = 8;
             eliminarArtBtn.Text = "Eliminar Articulo";
             eliminarArtBtn.UseVisualStyleBackColor = false;
@@ -133,52 +136,58 @@
             // 
             // codigoInput
             // 
-            codigoInput.Location = new Point(215, 47);
+            codigoInput.Location = new Point(246, 63);
+            codigoInput.Margin = new Padding(3, 4, 3, 4);
             codigoInput.Name = "codigoInput";
-            codigoInput.Size = new Size(184, 23);
+            codigoInput.Size = new Size(210, 27);
             codigoInput.TabIndex = 9;
             // 
             // nombreInput
             // 
-            nombreInput.Location = new Point(215, 88);
+            nombreInput.Location = new Point(246, 117);
+            nombreInput.Margin = new Padding(3, 4, 3, 4);
             nombreInput.Name = "nombreInput";
-            nombreInput.Size = new Size(184, 23);
+            nombreInput.Size = new Size(210, 27);
             nombreInput.TabIndex = 10;
             // 
             // marcaInput
             // 
-            marcaInput.Location = new Point(215, 229);
+            marcaInput.Location = new Point(246, 305);
+            marcaInput.Margin = new Padding(3, 4, 3, 4);
             marcaInput.Name = "marcaInput";
-            marcaInput.Size = new Size(184, 23);
+            marcaInput.Size = new Size(210, 27);
             marcaInput.TabIndex = 11;
             // 
             // descInput
             // 
-            descInput.Location = new Point(215, 134);
+            descInput.Location = new Point(246, 179);
+            descInput.Margin = new Padding(3, 4, 3, 4);
             descInput.Multiline = true;
             descInput.Name = "descInput";
-            descInput.Size = new Size(184, 88);
+            descInput.Size = new Size(210, 116);
             descInput.TabIndex = 13;
             // 
             // categoriaInput
             // 
-            categoriaInput.Location = new Point(215, 266);
+            categoriaInput.Location = new Point(246, 355);
+            categoriaInput.Margin = new Padding(3, 4, 3, 4);
             categoriaInput.Name = "categoriaInput";
-            categoriaInput.Size = new Size(184, 23);
+            categoriaInput.Size = new Size(210, 27);
             categoriaInput.TabIndex = 15;
             // 
             // precioInput
             // 
-            precioInput.Location = new Point(215, 309);
+            precioInput.Location = new Point(246, 412);
+            precioInput.Margin = new Padding(3, 4, 3, 4);
             precioInput.Name = "precioInput";
-            precioInput.Size = new Size(184, 23);
+            precioInput.Size = new Size(210, 27);
             precioInput.TabIndex = 17;
             // 
             // DetalleArticulo
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(914, 600);
             Controls.Add(precioInput);
             Controls.Add(categoriaInput);
             Controls.Add(descInput);
@@ -194,6 +203,7 @@
             Controls.Add(descLabel);
             Controls.Add(codigoLabel);
             Controls.Add(nombreLabel);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "DetalleArticulo";
             Text = "DetalleArticulo";
             Load += DetalleArticulo_Load;
