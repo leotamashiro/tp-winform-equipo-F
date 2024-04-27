@@ -164,7 +164,7 @@
             // toolAddArt
             // 
             toolAddArt.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            toolAddArt.Image = Properties.Resources.AddArticulo;
+            //toolAddArt.Image = Properties.Resources.AddArticulo;
             toolAddArt.ImageTransparentColor = Color.Magenta;
             toolAddArt.Name = "toolAddArt";
             toolAddArt.Size = new Size(24, 24);
@@ -173,7 +173,7 @@
             // toolDelArt
             // 
             toolDelArt.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            toolDelArt.Image = Properties.Resources.DeleteArticulo;
+            //toolDelArt.Image = Properties.Resources.DeleteArticulo;
             toolDelArt.ImageTransparentColor = Color.Magenta;
             toolDelArt.Name = "toolDelArt";
             toolDelArt.Size = new Size(24, 24);
