@@ -40,14 +40,18 @@
             eliminarArticuloToolStripMenuItem = new ToolStripMenuItem();
             dataGridView1 = new DataGridView();
             button2 = new Button();
+            toolStrip1 = new ToolStrip();
+            toolAddArt = new ToolStripButton();
+            toolDelArt = new ToolStripButton();
             menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            toolStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // txtBuscador
             // 
             txtBuscador.Anchor = AnchorStyles.Top;
-            txtBuscador.Location = new Point(580, 49);
+            txtBuscador.Location = new Point(580, 81);
             txtBuscador.Name = "txtBuscador";
             txtBuscador.Size = new Size(193, 27);
             txtBuscador.TabIndex = 3;
@@ -55,7 +59,7 @@
             // btnBuscar
             // 
             btnBuscar.Anchor = AnchorStyles.Top;
-            btnBuscar.Location = new Point(496, 49);
+            btnBuscar.Location = new Point(496, 79);
             btnBuscar.Name = "btnBuscar";
             btnBuscar.Size = new Size(78, 29);
             btnBuscar.TabIndex = 4;
@@ -123,7 +127,7 @@
             // 
             dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(11, 91);
+            dataGridView1.Location = new Point(12, 114);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.Size = new Size(762, 306);
@@ -134,7 +138,7 @@
             // 
             button2.Anchor = AnchorStyles.Top;
             button2.BackColor = Color.FromArgb(255, 255, 128);
-            button2.Location = new Point(580, 404);
+            button2.Location = new Point(580, 427);
             button2.Margin = new Padding(3, 4, 3, 4);
             button2.Name = "button2";
             button2.Size = new Size(185, 56);
@@ -143,11 +147,40 @@
             button2.UseVisualStyleBackColor = false;
             button2.Click += buttonVerDetalle;
             // 
+            // toolStrip1
+            // 
+            toolStrip1.ImageScalingSize = new Size(20, 20);
+            toolStrip1.Items.AddRange(new ToolStripItem[] { toolAddArt, toolDelArt });
+            toolStrip1.Location = new Point(0, 30);
+            toolStrip1.Name = "toolStrip1";
+            toolStrip1.Size = new Size(785, 27);
+            toolStrip1.TabIndex = 8;
+            toolStrip1.Text = "toolStrip1";
+            // 
+            // toolAddArt
+            // 
+            toolAddArt.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            toolAddArt.Image = Properties.Resources.AddArticulo;
+            toolAddArt.ImageTransparentColor = Color.Magenta;
+            toolAddArt.Name = "toolAddArt";
+            toolAddArt.Size = new Size(29, 24);
+            toolAddArt.Text = "toolStripButton1";
+            // 
+            // toolDelArt
+            // 
+            toolDelArt.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            toolDelArt.Image = Properties.Resources.DeleteArticulo;
+            toolDelArt.ImageTransparentColor = Color.Magenta;
+            toolDelArt.Name = "toolDelArt";
+            toolDelArt.Size = new Size(29, 24);
+            toolDelArt.Text = "toolStripButton1";
+            // 
             // ListadoArticulos
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(785, 518);
+            Controls.Add(toolStrip1);
             Controls.Add(button2);
             Controls.Add(dataGridView1);
             Controls.Add(btnBuscar);
@@ -160,6 +193,8 @@
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            toolStrip1.ResumeLayout(false);
+            toolStrip1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -177,5 +212,8 @@
         private ToolStripMenuItem eliminarArticuloToolStripMenuItem;
         private DataGridView dataGridView1;
         private Button button2;
+        private ToolStrip toolStrip1;
+        private ToolStripButton toolAddArt;
+        private ToolStripButton toolDelArt;
     }
 }
