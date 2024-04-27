@@ -68,8 +68,22 @@ namespace CATALOGO
 
         private void buttonVerDetalle(object sender, EventArgs e)
         {
-            Articulo articuloSeleccionado = (Articulo)dataGridView1.CurrentRow.DataBoundItem;
-            MostrarDetalleArticulo(articuloSeleccionado.ID, dataGridView1);
+            try
+            {
+                if (dataGridView1.CurrentRow != null && dataGridView1.CurrentRow.DataBoundItem != null)
+                {
+                    Articulo articuloSeleccionado = (Articulo)dataGridView1.CurrentRow.DataBoundItem;
+                    MostrarDetalleArticulo(articuloSeleccionado.ID, dataGridView1);
+                }
+                else
+                {
+                    MessageBox.Show("No hay artículos para mostrar o no se ha seleccionado ninguno válido.");
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
 
         private List<Articulo> cargar()

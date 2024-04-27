@@ -117,24 +117,42 @@
             // agregarArticuloToolStripMenuItem
             // 
             agregarArticuloToolStripMenuItem.Name = "agregarArticuloToolStripMenuItem";
+<<<<<<< Updated upstream
             agregarArticuloToolStripMenuItem.Size = new Size(180, 22);
+=======
+            agregarArticuloToolStripMenuItem.Size = new Size(160, 22);
+>>>>>>> Stashed changes
             agregarArticuloToolStripMenuItem.Text = "Agregar articulo";
             agregarArticuloToolStripMenuItem.Click += agregarArticuloToolStripMenuItem_Click;
             // 
             // eliminarArticuloToolStripMenuItem
             // 
             eliminarArticuloToolStripMenuItem.Name = "eliminarArticuloToolStripMenuItem";
+<<<<<<< Updated upstream
             eliminarArticuloToolStripMenuItem.Size = new Size(180, 22);
+=======
+            eliminarArticuloToolStripMenuItem.Size = new Size(160, 22);
+>>>>>>> Stashed changes
             eliminarArticuloToolStripMenuItem.Text = "Eliminar articulo";
             // 
             // dataGridView1
             // 
             dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+<<<<<<< Updated upstream
             dataGridView1.Location = new Point(10, 86);
             dataGridView1.Margin = new Padding(3, 2, 3, 2);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
+=======
+            dataGridView1.EditMode = DataGridViewEditMode.EditProgrammatically;
+            dataGridView1.Location = new Point(10, 86);
+            dataGridView1.Margin = new Padding(3, 2, 3, 2);
+            dataGridView1.MultiSelect = false;
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowHeadersWidth = 51;
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+>>>>>>> Stashed changes
             dataGridView1.Size = new Size(667, 230);
             dataGridView1.TabIndex = 5;
             dataGridView1.SelectionChanged += dataGridView1_SelectionChanged;
@@ -157,26 +175,42 @@
             toolStrip1.Items.AddRange(new ToolStripItem[] { toolAddArt, toolDelArt });
             toolStrip1.Location = new Point(0, 24);
             toolStrip1.Name = "toolStrip1";
+<<<<<<< Updated upstream
             toolStrip1.Size = new Size(687, 27);
+=======
+            toolStrip1.Size = new Size(687, 25);
+>>>>>>> Stashed changes
             toolStrip1.TabIndex = 8;
             toolStrip1.Text = "toolStrip1";
             // 
             // toolAddArt
             // 
             toolAddArt.DisplayStyle = ToolStripItemDisplayStyle.Image;
+<<<<<<< Updated upstream
             //toolAddArt.Image = Properties.Resources.AddArticulo;
             toolAddArt.ImageTransparentColor = Color.Magenta;
             toolAddArt.Name = "toolAddArt";
             toolAddArt.Size = new Size(24, 24);
+=======
+            toolAddArt.ImageTransparentColor = Color.Magenta;
+            toolAddArt.Name = "toolAddArt";
+            toolAddArt.Size = new Size(23, 22);
+>>>>>>> Stashed changes
             toolAddArt.Text = "toolStripButton1";
             // 
             // toolDelArt
             // 
             toolDelArt.DisplayStyle = ToolStripItemDisplayStyle.Image;
+<<<<<<< Updated upstream
             //toolDelArt.Image = Properties.Resources.DeleteArticulo;
             toolDelArt.ImageTransparentColor = Color.Magenta;
             toolDelArt.Name = "toolDelArt";
             toolDelArt.Size = new Size(24, 24);
+=======
+            toolDelArt.ImageTransparentColor = Color.Magenta;
+            toolDelArt.Name = "toolDelArt";
+            toolDelArt.Size = new Size(23, 22);
+>>>>>>> Stashed changes
             toolDelArt.Text = "toolStripButton1";
             // 
             // modificarArticuloToolStripMenuItem
