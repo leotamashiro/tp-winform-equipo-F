@@ -91,8 +91,8 @@ namespace CATALOGO
 
             if (filtro != "")
             {
-                listarArticuloFiltrada = listarArticulo.FindAll(articulo=>articulo.NOMBRE.ToUpper().Contains(filtro.ToUpper()) 
-                || articulo.CATEGORIA.Descripcion.ToUpper().Contains(filtro.ToUpper()) 
+                listarArticuloFiltrada = listarArticulo.FindAll(articulo => articulo.NOMBRE.ToUpper().Contains(filtro.ToUpper())
+                || articulo.CATEGORIA.Descripcion.ToUpper().Contains(filtro.ToUpper())
                 || articulo.MARCA.Descripcion.ToUpper().Contains(filtro.ToUpper())
                 || articulo.CODIGO.ToUpper().Contains(filtro.ToUpper()));
             }
@@ -100,8 +100,14 @@ namespace CATALOGO
 
             dataGridView1.DataSource = null;
             dataGridView1.DataSource = listarArticuloFiltrada;
-            
+
             ocultarColumnas();
+        }
+
+        private void agregarArticuloToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAgregar alta = new frmAgregar();
+            alta.ShowDialog();
         }
     }
 }
