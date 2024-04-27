@@ -77,9 +77,14 @@ namespace CATALOGO
                 articulo.CODIGO = txtCodArticulo.Text;
                 articulo.DESCRIPCION = txtDescripcion.Text;
                 articulo.PRECIO = decimal.Parse(txtPrecio.Text);
-                //articulo.imagen= (Imagen);
                 articulo.CATEGORIA = (Categoria)cboCategoria.SelectedItem;
                 articulo.MARCA = (Marca)cboMarca.SelectedItem;
+
+                if (articulo.IMAGEN == null)
+                {
+                    articulo.IMAGEN = new Imagen();
+                }
+
                 articulo.IMAGEN.Url = txtUrl.Text;
 
                 if (articulo.ID != 0)

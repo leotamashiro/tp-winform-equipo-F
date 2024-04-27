@@ -43,6 +43,7 @@
             toolStrip1 = new ToolStrip();
             toolAddArt = new ToolStripButton();
             toolDelArt = new ToolStripButton();
+            modificarArticuloToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             toolStrip1.SuspendLayout();
@@ -108,7 +109,7 @@
             // 
             // editarToolStripMenuItem
             // 
-            editarToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { agregarArticuloToolStripMenuItem, eliminarArticuloToolStripMenuItem });
+            editarToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { agregarArticuloToolStripMenuItem, eliminarArticuloToolStripMenuItem, modificarArticuloToolStripMenuItem });
             editarToolStripMenuItem.Name = "editarToolStripMenuItem";
             editarToolStripMenuItem.Size = new Size(49, 20);
             editarToolStripMenuItem.Text = "Editar";
@@ -178,6 +179,13 @@
             toolDelArt.Size = new Size(24, 24);
             toolDelArt.Text = "toolStripButton1";
             // 
+            // modificarArticuloToolStripMenuItem
+            // 
+            modificarArticuloToolStripMenuItem.Name = "modificarArticuloToolStripMenuItem";
+            modificarArticuloToolStripMenuItem.Size = new Size(180, 22);
+            modificarArticuloToolStripMenuItem.Text = "Modificar articulo";
+            modificarArticuloToolStripMenuItem.Click += modificarArticuloToolStripMenuItem_Click;
+            // 
             // ListadoArticulos
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -219,5 +227,6 @@
         private ToolStrip toolStrip1;
         private ToolStripButton toolAddArt;
         private ToolStripButton toolDelArt;
+        private ToolStripMenuItem modificarArticuloToolStripMenuItem;
     }
 }

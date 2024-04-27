@@ -24,7 +24,14 @@ namespace negocio
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.setearConsulta("INSERT INTO ARTICULOS (Codigo,Nombre,Descripcion,Precio,ImagenUrl) VALUES ('" + art.CODIGO + "','" + art.NOMBRE + "','" + art.DESCRIPCION + "','" + art.PRECIO + "','" + art.IMAGEN);
+                datos.setearConsulta("INSERT INTO ARTICULOS (Codigo, Nombre, Descripcion, Precio) VALUES (@codigo, @nombre, @descripcion, @precio)");
+                datos.setearConsulta("INSERT INTO IMAGENES (IdArticulo, ImagenUrl) VALUES (@IdArticulo, @imagenUrl)");
+                datos.setearParametro("@codigo", art.CODIGO);
+                datos.setearParametro("@nombre", art.NOMBRE);
+                datos.setearParametro("@descripcion", art.DESCRIPCION);
+                datos.setearParametro("@precio", art.PRECIO);
+                datos.setearParametro("@IdArticulo", art.ID); 
+                datos.setearParametro("@imagenUrl", art.IMAGEN.Url);
                 datos.ejecutarAccion();
             }
             catch (Exception ex)
@@ -42,13 +49,14 @@ namespace negocio
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.setearConsulta("UPDATE ARTICULOS SET Codigo = @codigo, Nombre = @nombre, Descripcion = @descripcion, Precio = @precio, ImagenUrl = @img, IdMarca = @idMarca, IdCategoria = @idCategoria WHERE Id = @id");
+                datos.setearConsulta("INSERT INTO ARTICULOS (Codigo, Nombre, Descripcion, Precio) VALUES (@codigo, @nombre, @descripcion, @precio)");
+                datos.setearConsulta("INSERT INTO IMAGENES (IdArticulo, ImagenUrl) VALUES (@IdArticulo, @imagenUrl)");
                 datos.setearParametro("@codigo", art.CODIGO);
                 datos.setearParametro("@nombre", art.NOMBRE);
                 datos.setearParametro("@descripcion", art.DESCRIPCION);
                 datos.setearParametro("@precio", art.PRECIO);
-                datos.setearParametro("@img", art.IMAGEN);
-                datos.setearParametro("@id", art.ID);
+                datos.setearParametro("@IdArticulo", art.ID);
+                datos.setearParametro("@imagenUrl", art.IMAGEN.Url);
                 datos.ejecutarAccion();
             }
             catch (Exception ex)

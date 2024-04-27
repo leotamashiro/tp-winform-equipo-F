@@ -109,5 +109,21 @@ namespace CATALOGO
             frmAgregar alta = new frmAgregar();
             alta.ShowDialog();
         }
+
+        private void modificarArticuloToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Articulo articuloSeleccionado = (Articulo)dataGridView1.CurrentRow.DataBoundItem;
+            if (dataGridView1.CurrentRow == null)
+            {
+                MessageBox.Show("NO SELECCIONASTE UN ARTICULO");
+            }
+            else
+            {
+                articuloSeleccionado = (Articulo)dataGridView1.CurrentRow.DataBoundItem;
+                frmAgregar modificar = new frmAgregar(articuloSeleccionado);
+                modificar.ShowDialog();
+                cargar();
+            }
+        }
     }
 }
