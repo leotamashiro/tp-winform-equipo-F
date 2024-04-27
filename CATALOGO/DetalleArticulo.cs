@@ -18,11 +18,13 @@ namespace CATALOGO
     public partial class DetalleArticulo : Form
     {
         private Articulo _articulo;
+        private DataGridView dataGridPrincipal;
         private int _id;
-        public DetalleArticulo(int id)
+        public DetalleArticulo(int id, DataGridView gridTable)
         {
             InitializeComponent();
             _id = id;
+            dataGridPrincipal = gridTable;
         }
 
         ArticuloService articuloService = new ArticuloService();
@@ -74,10 +76,10 @@ namespace CATALOGO
                 try
                 {
                     articuloService.eliminarArticulo(_articulo.ID);
-                    //List<Articulo> listaActualizada = articuloService.ListarArticulos();
-                    //dataGridView1.DataSource = listaActualizada;
                     MessageBox.Show("Articulo eliminado correctamente!");
                     this.Close();
+                    List<Articulo> listaActualizada = articuloService.ListarArticulos();
+                    dataGridPrincipal.DataSource = listaActualizada;
 
                 }
                 catch (Exception ex)

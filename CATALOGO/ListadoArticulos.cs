@@ -25,11 +25,11 @@ namespace CATALOGO
             InitializeComponent();
         }
 
-        private void MostrarDetalleArticulo(int id)
+        private void MostrarDetalleArticulo(int id, DataGridView gridTable)
         {
             try
             {
-                DetalleArticulo detalleForm = new DetalleArticulo(id);
+                DetalleArticulo detalleForm = new DetalleArticulo(id, gridTable);
                 detalleForm.ShowDialog();
             }
             catch (Exception ex)
@@ -69,7 +69,7 @@ namespace CATALOGO
         private void buttonVerDetalle(object sender, EventArgs e)
         {
             Articulo articuloSeleccionado = (Articulo)dataGridView1.CurrentRow.DataBoundItem;
-            MostrarDetalleArticulo(articuloSeleccionado.ID);
+            MostrarDetalleArticulo(articuloSeleccionado.ID, dataGridView1);
         }
 
         private List<Articulo> cargar()
