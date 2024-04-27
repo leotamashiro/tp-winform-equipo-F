@@ -74,8 +74,11 @@ namespace CATALOGO
                 try
                 {
                     articuloService.eliminarArticulo(_articulo.ID);
+                    //List<Articulo> listaActualizada = articuloService.ListarArticulos();
+                    //dataGridView1.DataSource = listaActualizada;
                     MessageBox.Show("Articulo eliminado correctamente!");
                     this.Close();
+
                 }
                 catch (Exception ex)
                 {
