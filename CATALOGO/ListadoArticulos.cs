@@ -25,18 +25,6 @@ namespace CATALOGO
             InitializeComponent();
         }
 
-        private void MostrarDetalleArticulo(int id, DataGridView gridTable)
-        {
-            try
-            {
-                DetalleArticulo detalleForm = new DetalleArticulo(id, gridTable);
-                detalleForm.ShowDialog();
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
 
         private void ListadoArticulos_Load(object sender, EventArgs e)
         {
@@ -52,8 +40,6 @@ namespace CATALOGO
             CargarImagen(articuloSeleccionado.IMAGEN.Url);
         }
 
-
-
         private void CargarImagen(string URLimagen)
         {
             //try
@@ -66,6 +52,18 @@ namespace CATALOGO
             //}
         }
 
+        private void MostrarDetalleArticulo(int id, DataGridView gridTable)
+        {
+            try
+            {
+                DetalleArticulo detalleForm = new DetalleArticulo(id, gridTable);
+                detalleForm.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
         private void buttonVerDetalle(object sender, EventArgs e)
         {
             try
@@ -120,7 +118,7 @@ namespace CATALOGO
 
         private void agregarArticuloToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmAgregar alta = new frmAgregar();
+            frmAgregar alta = new frmAgregar(dataGridView1);
             alta.ShowDialog();
             cargar();
         }

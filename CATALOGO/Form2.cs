@@ -17,10 +17,12 @@ namespace CATALOGO
     public partial class frmAgregar : Form
     {
         private Articulo articulo = null;
+        private DataGridView dataGridPrincipal;
 
-        public frmAgregar()
+        public frmAgregar(DataGridView dataGrid)
         {
             InitializeComponent();
+            dataGridPrincipal = dataGrid;
         }
         public frmAgregar(Articulo articulo)
         {
@@ -48,7 +50,7 @@ namespace CATALOGO
                     txtDescripcion.Text = articulo.DESCRIPCION;
                     txtPrecio.Text = articulo.PRECIO.ToString();
                     txtUrl.Text = articulo.IMAGEN.Url;
-                    //cargarImagen(articulo.ImagenUrl);
+                    //CargarImagen(articulo.IMAGEN.Url);
                     cboMarca.SelectedValue = articulo.MARCA.Id;
                     cboCategoria.SelectedValue = articulo.CATEGORIA.Id;
                 }
@@ -56,6 +58,18 @@ namespace CATALOGO
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void CargarImagen(string URLimagen)
+        {
+            try
+            {
+                imgAgrArt.Load(URLimagen);
+            }
+            catch (Exception ex)
+            {
+                imgAgrArt.Load("https://media.istockphoto.com/id/1409329028/vector/no-picture-available-placeholder-thumbnail-icon-illustration-design.jpg?s=612x612&w=0&k=20&c=_zOuJu755g2eEUioiOUdz_mHKJQJn-tDgIAhQzyeKUQ=");
             }
         }
 
@@ -94,11 +108,18 @@ namespace CATALOGO
                     MessageBox.Show("Agregado Exitosamente");
                 }
                 Close();
+                List<Articulo> listaActualizada = negocio.ListarArticulos();
+                dataGridPrincipal.DataSource = listaActualizada;
             }
             catch (Exception ex)
             {
                 throw ex;
             }
+        }
+
+        private void txtUrl_Leave(object sender, EventArgs e)
+        {
+            CargarImagen(txtUrl.Text);
         }
     }
 }

@@ -26,8 +26,8 @@ namespace CATALOGO
 
         private void btnAgregArt_Click(object sender, EventArgs e)
         {
-            frmAgregar alta = new frmAgregar(); 
-            alta.ShowDialog(); 
+            //frmAgregar alta = new frmAgregar(); 
+            //alta.ShowDialog(); 
         }
     }
 }

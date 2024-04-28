@@ -44,8 +44,8 @@
             btnCancelar = new Button();
             txtUrl = new TextBox();
             label6 = new Label();
-            pictureBox1 = new PictureBox();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            imgAgrArt = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)imgAgrArt).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -59,7 +59,7 @@
             // 
             // txtCodArticulo
             // 
-            txtCodArticulo.Location = new Point(183, 51);
+            txtCodArticulo.Location = new Point(207, 58);
             txtCodArticulo.Margin = new Padding(3, 4, 3, 4);
             txtCodArticulo.Name = "txtCodArticulo";
             txtCodArticulo.Size = new Size(179, 27);
@@ -67,7 +67,7 @@
             // 
             // txtNombre
             // 
-            txtNombre.Location = new Point(183, 100);
+            txtNombre.Location = new Point(207, 107);
             txtNombre.Margin = new Padding(3, 4, 3, 4);
             txtNombre.Name = "txtNombre";
             txtNombre.Size = new Size(179, 27);
@@ -84,7 +84,7 @@
             // 
             // txtDescripcion
             // 
-            txtDescripcion.Location = new Point(183, 149);
+            txtDescripcion.Location = new Point(207, 156);
             txtDescripcion.Margin = new Padding(3, 4, 3, 4);
             txtDescripcion.Name = "txtDescripcion";
             txtDescripcion.Size = new Size(179, 27);
@@ -93,7 +93,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(32, 160);
+            label3.Location = new Point(32, 159);
             label3.Name = "label3";
             label3.Size = new Size(101, 20);
             label3.TabIndex = 6;
@@ -102,7 +102,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(32, 259);
+            label4.Location = new Point(34, 254);
             label4.Name = "label4";
             label4.Size = new Size(87, 20);
             label4.TabIndex = 12;
@@ -111,7 +111,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(32, 209);
+            label5.Location = new Point(32, 204);
             label5.Name = "label5";
             label5.Size = new Size(60, 20);
             label5.TabIndex = 10;
@@ -119,7 +119,7 @@
             // 
             // txtPrecio
             // 
-            txtPrecio.Location = new Point(183, 297);
+            txtPrecio.Location = new Point(209, 332);
             txtPrecio.Margin = new Padding(3, 4, 3, 4);
             txtPrecio.Name = "txtPrecio";
             txtPrecio.Size = new Size(179, 27);
@@ -128,7 +128,7 @@
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(32, 308);
+            label8.Location = new Point(34, 335);
             label8.Name = "label8";
             label8.Size = new Size(58, 20);
             label8.TabIndex = 16;
@@ -137,7 +137,7 @@
             // cboMarca
             // 
             cboMarca.FormattingEnabled = true;
-            cboMarca.Location = new Point(183, 209);
+            cboMarca.Location = new Point(209, 201);
             cboMarca.Margin = new Padding(3, 4, 3, 4);
             cboMarca.Name = "cboMarca";
             cboMarca.Size = new Size(179, 28);
@@ -146,7 +146,7 @@
             // cboCategoria
             // 
             cboCategoria.FormattingEnabled = true;
-            cboCategoria.Location = new Point(183, 259);
+            cboCategoria.Location = new Point(209, 251);
             cboCategoria.Margin = new Padding(3, 4, 3, 4);
             cboCategoria.Name = "cboCategoria";
             cboCategoria.Size = new Size(179, 28);
@@ -176,36 +176,38 @@
             // 
             // txtUrl
             // 
-            txtUrl.Location = new Point(183, 347);
+            txtUrl.Location = new Point(209, 292);
             txtUrl.Margin = new Padding(3, 4, 3, 4);
             txtUrl.Name = "txtUrl";
             txtUrl.Size = new Size(179, 27);
             txtUrl.TabIndex = 6;
+            txtUrl.Leave += txtUrl_Leave;
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(32, 357);
+            label6.Location = new Point(34, 295);
             label6.Name = "label6";
             label6.Size = new Size(35, 20);
             label6.TabIndex = 24;
             label6.Text = "URL";
             // 
-            // pictureBox1
+            // imgAgrArt
             // 
-            pictureBox1.Location = new Point(425, 100);
-            pictureBox1.Margin = new Padding(3, 4, 3, 4);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(299, 267);
-            pictureBox1.TabIndex = 26;
-            pictureBox1.TabStop = false;
+            imgAgrArt.Location = new Point(425, 78);
+            imgAgrArt.Margin = new Padding(3, 4, 3, 4);
+            imgAgrArt.Name = "imgAgrArt";
+            imgAgrArt.Size = new Size(299, 267);
+            imgAgrArt.SizeMode = PictureBoxSizeMode.StretchImage;
+            imgAgrArt.TabIndex = 26;
+            imgAgrArt.TabStop = false;
             // 
             // frmAgregar
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(758, 471);
-            Controls.Add(pictureBox1);
+            Controls.Add(imgAgrArt);
             Controls.Add(txtUrl);
             Controls.Add(label6);
             Controls.Add(btnCancelar);
@@ -226,7 +228,7 @@
             Name = "frmAgregar";
             Text = "Agregar Articulos";
             Load += Form2_Load;
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)imgAgrArt).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -249,6 +251,6 @@
         private Button btnCancelar;
         private TextBox txtUrl;
         private Label label6;
-        private PictureBox pictureBox1;
+        private PictureBox imgAgrArt;
     }
 }

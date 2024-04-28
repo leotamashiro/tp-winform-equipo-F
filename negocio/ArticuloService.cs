@@ -37,6 +37,7 @@ namespace negocio
                 datos.ejecutarLectura();
 
                 int nuevoId = 0;
+
                 if (datos.Lector.Read() && datos.Lector["MaxId"] != DBNull.Value)
                 {
                     nuevoId = Convert.ToInt32(datos.Lector["MaxId"]);
