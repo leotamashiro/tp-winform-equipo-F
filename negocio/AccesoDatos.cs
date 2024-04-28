@@ -18,7 +18,7 @@ namespace negocio
         }
         public AccesoDatos()
         {
-            conexion = new SqlConnection("server =.\\SQLEXPRESS; database = CATALOGO_DB_v3; integrated security=true");
+            conexion = new SqlConnection("server =.\\SQLEXPRESS; database = CATALOGO_P3_DB; integrated security=true");
             comando = new SqlCommand();
         }
 
@@ -55,6 +55,10 @@ namespace negocio
             {
 
                 throw ex;
+            }
+            finally
+            {
+                conexion.Close();
             }
         }
         public void setearParametro(string nombre, object valor)

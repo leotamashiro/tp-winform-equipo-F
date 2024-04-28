@@ -24,15 +24,31 @@ namespace negocio
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.setearConsulta("INSERT INTO ARTICULOS (Codigo, Nombre, Descripcion, Precio) VALUES (@codigo, @nombre, @descripcion, @precio)");
-                datos.setearConsulta("INSERT INTO IMAGENES (IdArticulo, ImagenUrl) VALUES (@IdArticulo, @imagenUrl)");
+                datos.setearConsulta("INSERT INTO ARTICULOS (Codigo, Nombre, Descripcion,IdMarca, IdCategoria, Precio) VALUES (@codigo, @nombre, @descripcion, @idMarca, @idCategoria, @precio)");
                 datos.setearParametro("@codigo", art.CODIGO);
                 datos.setearParametro("@nombre", art.NOMBRE);
                 datos.setearParametro("@descripcion", art.DESCRIPCION);
+                datos.setearParametro("@idMarca", art.MARCA.Id);
+                datos.setearParametro("@idCategoria", art.CATEGORIA.Id);
                 datos.setearParametro("@precio", art.PRECIO);
-                datos.setearParametro("@IdArticulo", art.ID); 
-                datos.setearParametro("@imagenUrl", art.IMAGEN.Url);
                 datos.ejecutarAccion();
+
+                datos.setearConsulta("SELECT MAX(Id) AS MaxId FROM ARTICULOS");
+                datos.ejecutarLectura();
+
+                int nuevoId = 0;
+                if (datos.Lector.Read() && datos.Lector["MaxId"] != DBNull.Value)
+                {
+                    nuevoId = Convert.ToInt32(datos.Lector["MaxId"]);
+                }
+
+                if (art.IMAGEN != null)
+                {
+                    datos.setearConsulta("INSERT INTO IMAGENES (IdArticulo, ImagenUrl) VALUES (@idArticulo, @imagenUrl)");
+                    datos.setearParametro("@idArticulo", nuevoId);
+                    datos.setearParametro("@imagenUrl", art.IMAGEN.Url);
+                    datos.ejecutarAccion();
+                }
             }
             catch (Exception ex)
             {
@@ -49,15 +65,23 @@ namespace negocio
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.setearConsulta("INSERT INTO ARTICULOS (Codigo, Nombre, Descripcion, Precio) VALUES (@codigo, @nombre, @descripcion, @precio)");
-                datos.setearConsulta("INSERT INTO IMAGENES (IdArticulo, ImagenUrl) VALUES (@IdArticulo, @imagenUrl)");
+                datos.setearConsulta("UPDATE ARTICULOS SET CODIGO = @codigo, NOMBRE = @nombre, DESCRIPCION = @descripcion, IdMarca =@idMarca, IdCategoria=@idCategoria ,PRECIO = @precio WHERE ID = @id");
                 datos.setearParametro("@codigo", art.CODIGO);
                 datos.setearParametro("@nombre", art.NOMBRE);
                 datos.setearParametro("@descripcion", art.DESCRIPCION);
                 datos.setearParametro("@precio", art.PRECIO);
-                datos.setearParametro("@IdArticulo", art.ID);
-                datos.setearParametro("@imagenUrl", art.IMAGEN.Url);
+                datos.setearParametro("@id", art.ID);
+                datos.setearParametro("@idMarca", art.MARCA.Id);
+                datos.setearParametro("@idCategoria", art.CATEGORIA.Id);
                 datos.ejecutarAccion();
+
+                if (art.IMAGEN != null)
+                {
+                    datos.setearConsulta("UPDATE IMAGENES SET ImagenUrl = @imagenUrl WHERE IdArticulo = @id");
+                    datos.setearParametro("@imagenUrl", art.IMAGEN.Url);
+                    datos.setearParametro("@id", art.ID);
+                    datos.ejecutarAccion();
+                }
             }
             catch (Exception ex)
             {

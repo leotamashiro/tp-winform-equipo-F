@@ -122,6 +122,7 @@ namespace CATALOGO
         {
             frmAgregar alta = new frmAgregar();
             alta.ShowDialog();
+            cargar();
         }
 
         private void modificarArticuloToolStripMenuItem_Click(object sender, EventArgs e)
