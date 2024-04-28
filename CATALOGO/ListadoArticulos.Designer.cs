@@ -31,70 +31,46 @@
             txtBuscador = new TextBox();
             btnBuscar = new Button();
             archivoToolStripMenuItem = new ToolStripMenuItem();
-            descargarTablaToolStripMenuItem = new ToolStripMenuItem();
-            vistaActualToolStripMenuItem = new ToolStripMenuItem();
-            completaToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1 = new MenuStrip();
             editarToolStripMenuItem = new ToolStripMenuItem();
             agregarArticuloToolStripMenuItem = new ToolStripMenuItem();
-            eliminarArticuloToolStripMenuItem = new ToolStripMenuItem();
+            modificarArticuloToolStripMenuItem = new ToolStripMenuItem();
             dataGridView1 = new DataGridView();
             button2 = new Button();
-            toolStrip1 = new ToolStrip();
-            toolAddArt = new ToolStripButton();
-            toolDelArt = new ToolStripButton();
-            modificarArticuloToolStripMenuItem = new ToolStripMenuItem();
+            comboBox1 = new ComboBox();
+            lblMarca = new Label();
+            groupBox1 = new GroupBox();
+            comboBox2 = new ComboBox();
+            label1 = new Label();
             menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
-            toolStrip1.SuspendLayout();
+            groupBox1.SuspendLayout();
             SuspendLayout();
             // 
             // txtBuscador
             // 
-            txtBuscador.Anchor = AnchorStyles.Top;
-            txtBuscador.Location = new Point(508, 61);
-            txtBuscador.Margin = new Padding(3, 2, 3, 2);
+            txtBuscador.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            txtBuscador.Location = new Point(595, 81);
             txtBuscador.Name = "txtBuscador";
-            txtBuscador.Size = new Size(169, 23);
-            txtBuscador.TabIndex = 3;
+            txtBuscador.Size = new Size(193, 27);
+            txtBuscador.TabIndex = 0;
             // 
             // btnBuscar
             // 
-            btnBuscar.Anchor = AnchorStyles.Top;
-            btnBuscar.Location = new Point(434, 59);
-            btnBuscar.Margin = new Padding(3, 2, 3, 2);
+            btnBuscar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnBuscar.Location = new Point(512, 79);
             btnBuscar.Name = "btnBuscar";
-            btnBuscar.Size = new Size(68, 22);
-            btnBuscar.TabIndex = 4;
+            btnBuscar.Size = new Size(78, 29);
+            btnBuscar.TabIndex = 1;
             btnBuscar.Text = "Buscar";
             btnBuscar.UseVisualStyleBackColor = true;
             btnBuscar.Click += btnBuscar_Click;
             // 
             // archivoToolStripMenuItem
             // 
-            archivoToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { descargarTablaToolStripMenuItem });
             archivoToolStripMenuItem.Name = "archivoToolStripMenuItem";
-            archivoToolStripMenuItem.Size = new Size(60, 20);
+            archivoToolStripMenuItem.Size = new Size(73, 24);
             archivoToolStripMenuItem.Text = "Archivo";
-            // 
-            // descargarTablaToolStripMenuItem
-            // 
-            descargarTablaToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { vistaActualToolStripMenuItem, completaToolStripMenuItem });
-            descargarTablaToolStripMenuItem.Name = "descargarTablaToolStripMenuItem";
-            descargarTablaToolStripMenuItem.Size = new Size(155, 22);
-            descargarTablaToolStripMenuItem.Text = "Descargar tabla";
-            // 
-            // vistaActualToolStripMenuItem
-            // 
-            vistaActualToolStripMenuItem.Name = "vistaActualToolStripMenuItem";
-            vistaActualToolStripMenuItem.Size = new Size(134, 22);
-            vistaActualToolStripMenuItem.Text = "Vista actual";
-            // 
-            // completaToolStripMenuItem
-            // 
-            completaToolStripMenuItem.Name = "completaToolStripMenuItem";
-            completaToolStripMenuItem.Size = new Size(134, 22);
-            completaToolStripMenuItem.Text = "Completa";
             // 
             // menuStrip1
             // 
@@ -102,128 +78,133 @@
             menuStrip1.Items.AddRange(new ToolStripItem[] { archivoToolStripMenuItem, editarToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Padding = new Padding(5, 2, 0, 2);
-            menuStrip1.Size = new Size(687, 24);
+            menuStrip1.Padding = new Padding(6, 3, 0, 3);
+            menuStrip1.Size = new Size(798, 30);
             menuStrip1.TabIndex = 2;
             menuStrip1.Text = "menuStrip1";
             // 
             // editarToolStripMenuItem
             // 
-            editarToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { agregarArticuloToolStripMenuItem, eliminarArticuloToolStripMenuItem, modificarArticuloToolStripMenuItem });
+            editarToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { agregarArticuloToolStripMenuItem, modificarArticuloToolStripMenuItem });
             editarToolStripMenuItem.Name = "editarToolStripMenuItem";
-            editarToolStripMenuItem.Size = new Size(49, 20);
+            editarToolStripMenuItem.Size = new Size(62, 24);
             editarToolStripMenuItem.Text = "Editar";
             // 
             // agregarArticuloToolStripMenuItem
             // 
             agregarArticuloToolStripMenuItem.Name = "agregarArticuloToolStripMenuItem";
-            agregarArticuloToolStripMenuItem.Size = new Size(180, 22);
-            agregarArticuloToolStripMenuItem.Size = new Size(160, 22);
+            agregarArticuloToolStripMenuItem.Size = new Size(210, 26);
             agregarArticuloToolStripMenuItem.Text = "Agregar articulo";
             agregarArticuloToolStripMenuItem.Click += agregarArticuloToolStripMenuItem_Click;
             // 
-            // eliminarArticuloToolStripMenuItem
+            // modificarArticuloToolStripMenuItem
             // 
-            eliminarArticuloToolStripMenuItem.Name = "eliminarArticuloToolStripMenuItem";
-            eliminarArticuloToolStripMenuItem.Size = new Size(180, 22);
-            eliminarArticuloToolStripMenuItem.Size = new Size(160, 22);
-            eliminarArticuloToolStripMenuItem.Text = "Eliminar articulo";
+            modificarArticuloToolStripMenuItem.Name = "modificarArticuloToolStripMenuItem";
+            modificarArticuloToolStripMenuItem.Size = new Size(210, 26);
+            modificarArticuloToolStripMenuItem.Text = "Modificar articulo";
+            modificarArticuloToolStripMenuItem.Click += modificarArticuloToolStripMenuItem_Click;
             // 
             // dataGridView1
             // 
             dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(10, 86);
-            dataGridView1.Margin = new Padding(3, 2, 3, 2);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
             dataGridView1.EditMode = DataGridViewEditMode.EditProgrammatically;
-            dataGridView1.Location = new Point(10, 86);
-            dataGridView1.Margin = new Padding(3, 2, 3, 2);
+            dataGridView1.Location = new Point(11, 115);
             dataGridView1.MultiSelect = false;
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView1.Size = new Size(667, 230);
+            dataGridView1.Size = new Size(775, 303);
             dataGridView1.TabIndex = 5;
             dataGridView1.SelectionChanged += dataGridView1_SelectionChanged;
             // 
             // button2
             // 
-            button2.Anchor = AnchorStyles.Top;
+            button2.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             button2.BackColor = Color.FromArgb(255, 255, 128);
-            button2.Location = new Point(508, 320);
+            button2.Location = new Point(595, 445);
+            button2.Margin = new Padding(3, 4, 3, 4);
             button2.Name = "button2";
-            button2.Size = new Size(162, 42);
-            button2.TabIndex = 7;
+            button2.Size = new Size(185, 48);
+            button2.TabIndex = 2;
             button2.Text = "Ver Detalle";
             button2.UseVisualStyleBackColor = false;
             button2.Click += buttonVerDetalle;
             // 
-            // toolStrip1
+            // comboBox1
             // 
-            toolStrip1.ImageScalingSize = new Size(20, 20);
-            toolStrip1.Items.AddRange(new ToolStripItem[] { toolAddArt, toolDelArt });
-            toolStrip1.Location = new Point(0, 24);
-            toolStrip1.Name = "toolStrip1";
-            toolStrip1.Size = new Size(687, 27);
-            toolStrip1.Size = new Size(687, 25);
-            toolStrip1.TabIndex = 8;
-            toolStrip1.Text = "toolStrip1";
+            comboBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(101, 21);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(154, 28);
+            comboBox1.TabIndex = 6;
             // 
-            // toolAddArt
+            // lblMarca
             // 
-            toolAddArt.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            //toolAddArt.Image = Properties.Resources.AddArticulo;
-            toolAddArt.ImageTransparentColor = Color.Magenta;
-            toolAddArt.Name = "toolAddArt";
-            toolAddArt.Size = new Size(24, 24);
-            toolAddArt.ImageTransparentColor = Color.Magenta;
-            toolAddArt.Name = "toolAddArt";
-            toolAddArt.Size = new Size(23, 22);
-            toolAddArt.Text = "toolStripButton1";
+            lblMarca.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            lblMarca.AutoSize = true;
+            lblMarca.Location = new Point(42, 24);
+            lblMarca.Name = "lblMarca";
+            lblMarca.Size = new Size(53, 20);
+            lblMarca.TabIndex = 7;
+            lblMarca.Text = "Marca:";
             // 
-            // toolDelArt
+            // groupBox1
             // 
-            toolDelArt.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            //toolDelArt.Image = Properties.Resources.DeleteArticulo;
-            toolDelArt.ImageTransparentColor = Color.Magenta;
-            toolDelArt.Name = "toolDelArt";
-            toolDelArt.Size = new Size(24, 24);
-
-            toolDelArt.ImageTransparentColor = Color.Magenta;
-            toolDelArt.Name = "toolDelArt";
-            toolDelArt.Size = new Size(23, 22);
-            toolDelArt.Text = "toolStripButton1";
+            groupBox1.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            groupBox1.Controls.Add(comboBox2);
+            groupBox1.Controls.Add(label1);
+            groupBox1.Controls.Add(comboBox1);
+            groupBox1.Controls.Add(lblMarca);
+            groupBox1.Location = new Point(12, 424);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(277, 83);
+            groupBox1.TabIndex = 8;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "Filtros rápidos";
             // 
-            // modificarArticuloToolStripMenuItem
+            // comboBox2
             // 
-            modificarArticuloToolStripMenuItem.Name = "modificarArticuloToolStripMenuItem";
-            modificarArticuloToolStripMenuItem.Size = new Size(180, 22);
-            modificarArticuloToolStripMenuItem.Text = "Modificar articulo";
-            modificarArticuloToolStripMenuItem.Click += modificarArticuloToolStripMenuItem_Click;
+            comboBox2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            comboBox2.FormattingEnabled = true;
+            comboBox2.Location = new Point(101, 55);
+            comboBox2.Name = "comboBox2";
+            comboBox2.Size = new Size(154, 28);
+            comboBox2.TabIndex = 8;
+            // 
+            // label1
+            // 
+            label1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            label1.AutoSize = true;
+            label1.Location = new Point(42, 58);
+            label1.Name = "label1";
+            label1.Size = new Size(53, 20);
+            label1.TabIndex = 9;
+            label1.Text = "Marca:";
             // 
             // ListadoArticulos
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(687, 388);
-            Controls.Add(toolStrip1);
+            ClientSize = new Size(798, 513);
+            Controls.Add(groupBox1);
             Controls.Add(button2);
             Controls.Add(dataGridView1);
             Controls.Add(btnBuscar);
             Controls.Add(txtBuscador);
             Controls.Add(menuStrip1);
             MainMenuStrip = menuStrip1;
-            Margin = new Padding(3, 2, 3, 2);
+            MinimumSize = new Size(530, 560);
             Name = "ListadoArticulos";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Lista de artículos";
             Load += ListadoArticulos_Load;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
-            toolStrip1.ResumeLayout(false);
-            toolStrip1.PerformLayout();
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -233,17 +214,15 @@
         private Button btnBuscar;
         private ToolStripMenuItem archivoToolStripMenuItem;
         private MenuStrip menuStrip1;
-        private ToolStripMenuItem descargarTablaToolStripMenuItem;
-        private ToolStripMenuItem vistaActualToolStripMenuItem;
-        private ToolStripMenuItem completaToolStripMenuItem;
         private ToolStripMenuItem editarToolStripMenuItem;
         private ToolStripMenuItem agregarArticuloToolStripMenuItem;
-        private ToolStripMenuItem eliminarArticuloToolStripMenuItem;
         private DataGridView dataGridView1;
         private Button button2;
-        private ToolStrip toolStrip1;
-        private ToolStripButton toolAddArt;
-        private ToolStripButton toolDelArt;
         private ToolStripMenuItem modificarArticuloToolStripMenuItem;
+        private ComboBox comboBox1;
+        private Label lblMarca;
+        private GroupBox groupBox1;
+        private ComboBox comboBox2;
+        private Label label1;
     }
 }
