@@ -30,18 +30,19 @@
         {
             txtBuscador = new TextBox();
             btnBuscar = new Button();
-            archivoToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1 = new MenuStrip();
             editarToolStripMenuItem = new ToolStripMenuItem();
             agregarArticuloToolStripMenuItem = new ToolStripMenuItem();
             modificarArticuloToolStripMenuItem = new ToolStripMenuItem();
+            modificarToolStripMenuItem = new ToolStripMenuItem();
+            modificarMarcaToolStripMenuItem = new ToolStripMenuItem();
             dataGridView1 = new DataGridView();
             button2 = new Button();
-            comboBox1 = new ComboBox();
+            cboMarcas = new ComboBox();
             lblMarca = new Label();
             groupBox1 = new GroupBox();
-            comboBox2 = new ComboBox();
-            label1 = new Label();
+            cboCategoria = new ComboBox();
+            lblCategoria = new Label();
             menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             groupBox1.SuspendLayout();
@@ -66,16 +67,10 @@
             btnBuscar.UseVisualStyleBackColor = true;
             btnBuscar.Click += btnBuscar_Click;
             // 
-            // archivoToolStripMenuItem
-            // 
-            archivoToolStripMenuItem.Name = "archivoToolStripMenuItem";
-            archivoToolStripMenuItem.Size = new Size(73, 24);
-            archivoToolStripMenuItem.Text = "Archivo";
-            // 
             // menuStrip1
             // 
             menuStrip1.ImageScalingSize = new Size(20, 20);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { archivoToolStripMenuItem, editarToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { editarToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Padding = new Padding(6, 3, 0, 3);
@@ -85,7 +80,7 @@
             // 
             // editarToolStripMenuItem
             // 
-            editarToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { agregarArticuloToolStripMenuItem, modificarArticuloToolStripMenuItem });
+            editarToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { agregarArticuloToolStripMenuItem, modificarArticuloToolStripMenuItem, modificarToolStripMenuItem, modificarMarcaToolStripMenuItem });
             editarToolStripMenuItem.Name = "editarToolStripMenuItem";
             editarToolStripMenuItem.Size = new Size(62, 24);
             editarToolStripMenuItem.Text = "Editar";
@@ -93,16 +88,28 @@
             // agregarArticuloToolStripMenuItem
             // 
             agregarArticuloToolStripMenuItem.Name = "agregarArticuloToolStripMenuItem";
-            agregarArticuloToolStripMenuItem.Size = new Size(210, 26);
+            agregarArticuloToolStripMenuItem.Size = new Size(223, 26);
             agregarArticuloToolStripMenuItem.Text = "Agregar articulo";
             agregarArticuloToolStripMenuItem.Click += agregarArticuloToolStripMenuItem_Click;
             // 
             // modificarArticuloToolStripMenuItem
             // 
             modificarArticuloToolStripMenuItem.Name = "modificarArticuloToolStripMenuItem";
-            modificarArticuloToolStripMenuItem.Size = new Size(210, 26);
+            modificarArticuloToolStripMenuItem.Size = new Size(223, 26);
             modificarArticuloToolStripMenuItem.Text = "Modificar articulo";
             modificarArticuloToolStripMenuItem.Click += modificarArticuloToolStripMenuItem_Click;
+            // 
+            // modificarToolStripMenuItem
+            // 
+            modificarToolStripMenuItem.Name = "modificarToolStripMenuItem";
+            modificarToolStripMenuItem.Size = new Size(223, 26);
+            modificarToolStripMenuItem.Text = "Modificar categoria";
+            // 
+            // modificarMarcaToolStripMenuItem
+            // 
+            modificarMarcaToolStripMenuItem.Name = "modificarMarcaToolStripMenuItem";
+            modificarMarcaToolStripMenuItem.Size = new Size(223, 26);
+            modificarMarcaToolStripMenuItem.Text = "Modificar marca";
             // 
             // dataGridView1
             // 
@@ -131,14 +138,16 @@
             button2.UseVisualStyleBackColor = false;
             button2.Click += buttonVerDetalle;
             // 
-            // comboBox1
+            // cboMarcas
             // 
-            comboBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(101, 21);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(154, 28);
-            comboBox1.TabIndex = 6;
+            cboMarcas.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            cboMarcas.DropDownStyle = ComboBoxStyle.DropDownList;
+            cboMarcas.FormattingEnabled = true;
+            cboMarcas.Location = new Point(119, 16);
+            cboMarcas.Name = "cboMarcas";
+            cboMarcas.Size = new Size(154, 28);
+            cboMarcas.TabIndex = 6;
+            cboMarcas.SelectedIndexChanged += cboMarcas_SelectedIndexChanged;
             // 
             // lblMarca
             // 
@@ -153,35 +162,37 @@
             // groupBox1
             // 
             groupBox1.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            groupBox1.Controls.Add(comboBox2);
-            groupBox1.Controls.Add(label1);
-            groupBox1.Controls.Add(comboBox1);
+            groupBox1.Controls.Add(cboCategoria);
+            groupBox1.Controls.Add(lblCategoria);
+            groupBox1.Controls.Add(cboMarcas);
             groupBox1.Controls.Add(lblMarca);
             groupBox1.Location = new Point(12, 424);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(277, 83);
+            groupBox1.Size = new Size(299, 83);
             groupBox1.TabIndex = 8;
             groupBox1.TabStop = false;
             groupBox1.Text = "Filtros rápidos";
             // 
-            // comboBox2
+            // cboCategoria
             // 
-            comboBox2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(101, 55);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(154, 28);
-            comboBox2.TabIndex = 8;
+            cboCategoria.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            cboCategoria.DropDownStyle = ComboBoxStyle.DropDownList;
+            cboCategoria.FormattingEnabled = true;
+            cboCategoria.Location = new Point(119, 55);
+            cboCategoria.Name = "cboCategoria";
+            cboCategoria.Size = new Size(154, 28);
+            cboCategoria.TabIndex = 8;
+            cboCategoria.SelectedIndexChanged += cboCategoria_SelectedIndexChanged;
             // 
-            // label1
+            // lblCategoria
             // 
-            label1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
-            label1.AutoSize = true;
-            label1.Location = new Point(42, 58);
-            label1.Name = "label1";
-            label1.Size = new Size(53, 20);
-            label1.TabIndex = 9;
-            label1.Text = "Marca:";
+            lblCategoria.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            lblCategoria.AutoSize = true;
+            lblCategoria.Location = new Point(42, 58);
+            lblCategoria.Name = "lblCategoria";
+            lblCategoria.Size = new Size(77, 20);
+            lblCategoria.TabIndex = 9;
+            lblCategoria.Text = "Categoria:";
             // 
             // ListadoArticulos
             // 
@@ -212,17 +223,18 @@
         #endregion
         private TextBox txtBuscador;
         private Button btnBuscar;
-        private ToolStripMenuItem archivoToolStripMenuItem;
         private MenuStrip menuStrip1;
         private ToolStripMenuItem editarToolStripMenuItem;
         private ToolStripMenuItem agregarArticuloToolStripMenuItem;
         private DataGridView dataGridView1;
         private Button button2;
         private ToolStripMenuItem modificarArticuloToolStripMenuItem;
-        private ComboBox comboBox1;
+        private ComboBox cboMarcas;
         private Label lblMarca;
         private GroupBox groupBox1;
-        private ComboBox comboBox2;
-        private Label label1;
+        private ComboBox cboCategoria;
+        private Label lblCategoria;
+        private ToolStripMenuItem modificarToolStripMenuItem;
+        private ToolStripMenuItem modificarMarcaToolStripMenuItem;
     }
 }

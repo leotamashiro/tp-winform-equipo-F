@@ -32,6 +32,23 @@ namespace CATALOGO
             dataGridView1.DataSource = listarArticulo;
             ocultarColumnas();
             //CargarImagen(listarArticulo[0].IMAGEN.Url);
+            filtrosDesplegables();
+        }
+
+        private void filtrosDesplegables()
+        {
+            MarcaService marcaService = new MarcaService();
+            CategoriaService categoriaService = new CategoriaService();
+
+            cboMarcas.DataSource = marcaService.listar();
+            cboMarcas.ValueMember = "Id";
+            cboMarcas.DisplayMember = "Descripcion";
+            cboMarcas.SelectedIndex = -1;
+
+            cboCategoria.DataSource = categoriaService.listar();
+            cboCategoria.ValueMember = "Id";
+            cboCategoria.DisplayMember = "Descripcion";
+            cboCategoria.SelectedIndex = -1;
         }
 
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
@@ -78,7 +95,7 @@ namespace CATALOGO
                     MessageBox.Show("No hay artículos para mostrar o no se ha seleccionado ninguno válido.");
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
             }
@@ -104,11 +121,14 @@ namespace CATALOGO
             if (filtro != "")
             {
                 listarArticuloFiltrada = listarArticulo.FindAll(articulo => articulo.NOMBRE.ToUpper().Contains(filtro.ToUpper())
-                || articulo.CATEGORIA.Descripcion.ToUpper().Contains(filtro.ToUpper())
-                || articulo.MARCA.Descripcion.ToUpper().Contains(filtro.ToUpper())
                 || articulo.CODIGO.ToUpper().Contains(filtro.ToUpper()));
             }
-            else { listarArticuloFiltrada = listarArticulo; }
+            else 
+            {
+                listarArticuloFiltrada = listarArticulo; 
+                cboMarcas.SelectedIndex = -1;
+                cboCategoria.SelectedIndex = -1;
+            }
 
             dataGridView1.DataSource = null;
             dataGridView1.DataSource = listarArticuloFiltrada;
@@ -137,6 +157,42 @@ namespace CATALOGO
                 modificar.ShowDialog();
                 cargar();
             }
+        }
+
+        private void cboMarcas_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string filtro = cboMarcas.Text;
+
+            List<Articulo> listarArticuloFiltrada;
+
+            if (filtro != "")
+            {
+                listarArticuloFiltrada = listarArticulo.FindAll(articulo => articulo.MARCA.Descripcion.ToUpper().Contains(filtro.ToUpper()));
+            }
+            else { listarArticuloFiltrada = listarArticulo; }
+
+            dataGridView1.DataSource = null;
+            dataGridView1.DataSource = listarArticuloFiltrada;
+
+            ocultarColumnas();
+        }
+
+        private void cboCategoria_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string filtro = cboCategoria.Text;
+
+            List<Articulo> listarArticuloFiltrada;
+
+            if (filtro != "")
+            {
+                listarArticuloFiltrada = listarArticulo.FindAll(articulo => articulo.CATEGORIA.Descripcion.ToUpper().Contains(filtro.ToUpper()));
+            }
+            else { listarArticuloFiltrada = listarArticulo; }
+
+            dataGridView1.DataSource = null;
+            dataGridView1.DataSource = listarArticuloFiltrada;
+
+            ocultarColumnas();
         }
     }
 }
