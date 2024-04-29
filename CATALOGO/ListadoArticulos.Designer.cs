@@ -52,7 +52,7 @@
             // txtBuscador
             // 
             txtBuscador.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            txtBuscador.Location = new Point(595, 81);
+            txtBuscador.Location = new Point(555, 33);
             txtBuscador.Name = "txtBuscador";
             txtBuscador.Size = new Size(193, 27);
             txtBuscador.TabIndex = 0;
@@ -60,7 +60,7 @@
             // btnBuscar
             // 
             btnBuscar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnBuscar.Location = new Point(512, 79);
+            btnBuscar.Location = new Point(472, 31);
             btnBuscar.Name = "btnBuscar";
             btnBuscar.Size = new Size(78, 29);
             btnBuscar.TabIndex = 1;
@@ -75,7 +75,7 @@
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Padding = new Padding(6, 3, 0, 3);
-            menuStrip1.Size = new Size(798, 30);
+            menuStrip1.Size = new Size(758, 30);
             menuStrip1.TabIndex = 2;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -117,12 +117,12 @@
             dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.EditMode = DataGridViewEditMode.EditProgrammatically;
-            dataGridView1.Location = new Point(11, 115);
+            dataGridView1.Location = new Point(11, 67);
             dataGridView1.MultiSelect = false;
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView1.Size = new Size(775, 295);
+            dataGridView1.Size = new Size(735, 347);
             dataGridView1.TabIndex = 5;
             dataGridView1.SelectionChanged += dataGridView1_SelectionChanged;
             // 
@@ -130,7 +130,7 @@
             // 
             button2.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             button2.BackColor = Color.FromArgb(255, 255, 128);
-            button2.Location = new Point(595, 459);
+            button2.Location = new Point(555, 455);
             button2.Margin = new Padding(3, 4, 3, 4);
             button2.Name = "button2";
             button2.Size = new Size(185, 48);
@@ -168,7 +168,7 @@
             groupBox1.Controls.Add(lblCategoria);
             groupBox1.Controls.Add(cboMarcas);
             groupBox1.Controls.Add(lblMarca);
-            groupBox1.Location = new Point(12, 424);
+            groupBox1.Location = new Point(12, 420);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(324, 91);
             groupBox1.TabIndex = 8;
@@ -210,7 +210,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(798, 527);
+            ClientSize = new Size(758, 523);
             Controls.Add(groupBox1);
             Controls.Add(button2);
             Controls.Add(dataGridView1);
@@ -218,7 +218,7 @@
             Controls.Add(txtBuscador);
             Controls.Add(menuStrip1);
             MainMenuStrip = menuStrip1;
-            MinimumSize = new Size(530, 560);
+            MinimumSize = new Size(560, 560);
             Name = "ListadoArticulos";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Lista de artículos";
