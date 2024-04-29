@@ -87,6 +87,12 @@ namespace CATALOGO
                 {
                     articulo = new Articulo();
                 }
+
+                if (!ValidarCampos())
+                {
+                    return;
+                }
+
                 articulo.NOMBRE = txtNombre.Text;
                 articulo.CODIGO = txtCodArticulo.Text;
                 articulo.DESCRIPCION = txtDescripcion.Text;
@@ -94,7 +100,6 @@ namespace CATALOGO
                 articulo.CATEGORIA = (Categoria)cboCategoria.SelectedItem;
                 articulo.MARCA = (Marca)cboMarca.SelectedItem;
                 articulo.IMAGEN = new Imagen();
-
                 articulo.IMAGEN.Url = txtUrl.Text;
 
                 if (articulo.ID != 0)
@@ -107,20 +112,42 @@ namespace CATALOGO
                     negocio.agregar(articulo);
                     MessageBox.Show("Agregado Exitosamente");
                 }
+
                 List<Articulo> listaActualizada = negocio.ListarArticulos();
-                //dataGridPrincipal.DataSource = null;
                 dataGridPrincipal.DataSource = listaActualizada;
+
                 Close();
             }
             catch (Exception ex)
             {
-                throw ex;
+                MessageBox.Show("Se produjo un error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void txtUrl_Leave(object sender, EventArgs e)
         {
             CargarImagen(txtUrl.Text);
+        }
+        private bool ValidarCampos()
+        {
+            if (string.IsNullOrWhiteSpace(txtNombre.Text) ||
+                string.IsNullOrWhiteSpace(txtCodArticulo.Text) ||
+                string.IsNullOrWhiteSpace(txtDescripcion.Text) ||
+                string.IsNullOrWhiteSpace(txtPrecio.Text) ||
+                string.IsNullOrWhiteSpace(txtUrl.Text))
+            {
+                MessageBox.Show("Por favor complete todos los campos obligatorios.", "Campos obligatorios vacíos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            decimal precio;
+            if (!decimal.TryParse(txtPrecio.Text, out precio))
+            {
+                MessageBox.Show("El precio ingresado no es válido.", "Precio inválido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            return true;
         }
     }
 }
