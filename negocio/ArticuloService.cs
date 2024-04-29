@@ -79,7 +79,7 @@ namespace negocio
                 {
                     datos.setearConsulta("UPDATE IMAGENES SET ImagenUrl = @imagenUrl WHERE IdArticulo = @id");
                     datos.setearParametro("@imagenUrl", art.IMAGEN.Url);
-                    datos.setearParametro("@id", art.ID);
+                    datos.setearParametro("@idArticulo", art.ID);
                     datos.ejecutarAccion();
                 }
             }

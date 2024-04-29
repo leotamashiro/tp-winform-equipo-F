@@ -93,6 +93,19 @@ namespace CATALOGO
                     return;
                 }
 
+                if (cboCategoria.SelectedItem == null)
+                {
+                    MessageBox.Show("Por favor seleccione una categoría.", "Categoría no seleccionada", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+
+                if (cboMarca.SelectedItem == null)
+                {
+                    MessageBox.Show("Por favor seleccione una marca.", "Marca no seleccionada", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
                 articulo.NOMBRE = txtNombre.Text;
                 articulo.CODIGO = txtCodArticulo.Text;
                 articulo.DESCRIPCION = txtDescripcion.Text;
