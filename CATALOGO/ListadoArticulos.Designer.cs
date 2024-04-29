@@ -41,6 +41,7 @@
             cboMarcas = new ComboBox();
             lblMarca = new Label();
             groupBox1 = new GroupBox();
+            btnReset = new Button();
             cboCategoria = new ComboBox();
             lblCategoria = new Label();
             menuStrip1.SuspendLayout();
@@ -121,7 +122,7 @@
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView1.Size = new Size(775, 303);
+            dataGridView1.Size = new Size(775, 295);
             dataGridView1.TabIndex = 5;
             dataGridView1.SelectionChanged += dataGridView1_SelectionChanged;
             // 
@@ -129,7 +130,7 @@
             // 
             button2.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             button2.BackColor = Color.FromArgb(255, 255, 128);
-            button2.Location = new Point(595, 445);
+            button2.Location = new Point(595, 459);
             button2.Margin = new Padding(3, 4, 3, 4);
             button2.Name = "button2";
             button2.Size = new Size(185, 48);
@@ -162,16 +163,27 @@
             // groupBox1
             // 
             groupBox1.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            groupBox1.Controls.Add(btnReset);
             groupBox1.Controls.Add(cboCategoria);
             groupBox1.Controls.Add(lblCategoria);
             groupBox1.Controls.Add(cboMarcas);
             groupBox1.Controls.Add(lblMarca);
             groupBox1.Location = new Point(12, 424);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(299, 83);
+            groupBox1.Size = new Size(324, 91);
             groupBox1.TabIndex = 8;
             groupBox1.TabStop = false;
             groupBox1.Text = "Filtros rápidos";
+            // 
+            // btnReset
+            // 
+            btnReset.Image = Properties.Resources.Reset1;
+            btnReset.Location = new Point(279, 35);
+            btnReset.Name = "btnReset";
+            btnReset.Size = new Size(36, 32);
+            btnReset.TabIndex = 9;
+            btnReset.UseVisualStyleBackColor = true;
+            btnReset.Click += btnReset_Click;
             // 
             // cboCategoria
             // 
@@ -198,7 +210,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(798, 513);
+            ClientSize = new Size(798, 527);
             Controls.Add(groupBox1);
             Controls.Add(button2);
             Controls.Add(dataGridView1);
@@ -236,5 +248,6 @@
         private Label lblCategoria;
         private ToolStripMenuItem modificarToolStripMenuItem;
         private ToolStripMenuItem modificarMarcaToolStripMenuItem;
+        private Button btnReset;
     }
 }

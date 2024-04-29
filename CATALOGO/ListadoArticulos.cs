@@ -123,9 +123,9 @@ namespace CATALOGO
                 listarArticuloFiltrada = listarArticulo.FindAll(articulo => articulo.NOMBRE.ToUpper().Contains(filtro.ToUpper())
                 || articulo.CODIGO.ToUpper().Contains(filtro.ToUpper()));
             }
-            else 
+            else
             {
-                listarArticuloFiltrada = listarArticulo; 
+                listarArticuloFiltrada = listarArticulo;
                 cboMarcas.SelectedIndex = -1;
                 cboCategoria.SelectedIndex = -1;
             }
@@ -161,14 +161,23 @@ namespace CATALOGO
 
         private void cboMarcas_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string filtro = cboMarcas.Text;
+            string filtroMarcas = cboMarcas.Text;
+            string filtroCategorias = cboCategoria.Text;
 
             List<Articulo> listarArticuloFiltrada;
 
-            if (filtro != "")
+            if (filtroMarcas != "")
             {
-                listarArticuloFiltrada = listarArticulo.FindAll(articulo => articulo.MARCA.Descripcion.ToUpper().Contains(filtro.ToUpper()));
+                if (filtroCategorias != "")
+                {
+                    listarArticuloFiltrada = listarArticulo.FindAll(articulo => articulo.MARCA.Descripcion.ToUpper().Contains(filtroMarcas.ToUpper()) && articulo.CATEGORIA.Descripcion.ToUpper().Contains(filtroCategorias.ToUpper()));
+                }
+                else
+                {
+                    listarArticuloFiltrada = listarArticulo.FindAll(articulo => articulo.MARCA.Descripcion.ToUpper().Contains(filtroMarcas.ToUpper()));
+                }
             }
+
             else { listarArticuloFiltrada = listarArticulo; }
 
             dataGridView1.DataSource = null;
@@ -179,18 +188,42 @@ namespace CATALOGO
 
         private void cboCategoria_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string filtro = cboCategoria.Text;
+            string filtroMarcas = cboMarcas.Text;
+            string filtroCategorias = cboCategoria.Text;
 
             List<Articulo> listarArticuloFiltrada;
 
-            if (filtro != "")
+            if (filtroMarcas != "")
             {
-                listarArticuloFiltrada = listarArticulo.FindAll(articulo => articulo.CATEGORIA.Descripcion.ToUpper().Contains(filtro.ToUpper()));
+                if (filtroCategorias != "")
+                {
+                    listarArticuloFiltrada = listarArticulo.FindAll(articulo => articulo.MARCA.Descripcion.ToUpper().Contains(filtroMarcas.ToUpper()) && articulo.CATEGORIA.Descripcion.ToUpper().Contains(filtroCategorias.ToUpper()));
+                }
+                else
+                {
+                    listarArticuloFiltrada = listarArticulo.FindAll(articulo => articulo.MARCA.Descripcion.ToUpper().Contains(filtroMarcas.ToUpper()));
+                }
             }
+
             else { listarArticuloFiltrada = listarArticulo; }
 
             dataGridView1.DataSource = null;
             dataGridView1.DataSource = listarArticuloFiltrada;
+
+            ocultarColumnas();
+        }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            List<Articulo> listarArticuloOriginal;
+
+            listarArticuloOriginal = listarArticulo;
+
+            cboMarcas.SelectedIndex = -1;
+            cboCategoria.SelectedIndex = -1;
+
+            dataGridView1.DataSource = null;
+            dataGridView1.DataSource = listarArticuloOriginal;
 
             ocultarColumnas();
         }
