@@ -8,6 +8,7 @@ using System.Reflection;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
 using dominio;
+using System.Text.RegularExpressions;
 
 namespace negocio
 {
@@ -119,7 +120,7 @@ namespace negocio
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.setearConsulta("SELECT A.Id, A.Codigo, A.Nombre, A.Descripcion, M.Descripcion AS Marca, C.Descripcion AS Categoria, A.Precio, I.ImagenUrl FROM ARTICULOS A INNER JOIN MARCAS M ON A.IdMarca = M.Id INNER JOIN CATEGORIAS C ON A.IdCategoria = C.Id INNER JOIN IMAGENES I ON A.Id = I.IdArticulo; ");
+                datos.setearConsulta("SELECT A.Id, A.Codigo, A.Nombre, A.Descripcion, A.Precio, M.Descripcion AS Marca, C.Descripcion AS Categoria, STRING_AGG(I.ImagenUrl, ', ') AS Imagenes FROM ARTICULOS A INNER JOIN MARCAS M ON A.IdMarca = M.Id INNER JOIN CATEGORIAS C ON A.IdCategoria = C.Id LEFT JOIN IMAGENES I ON A.Id = I.IdArticulo GROUP BY A.Id, A.Codigo, A.Nombre, A.Descripcion, A.Precio, M.Descripcion, C.Descripcion;");
                 datos.ejecutarLectura();
 
                 while (datos.Lector.Read())
@@ -135,7 +136,7 @@ namespace negocio
                     aux.CATEGORIA = new Categoria();
                     if (!(datos.Lector["Categoria"] is DBNull)) aux.CATEGORIA.Descripcion = (string)datos.Lector["Categoria"];
                     aux.IMAGEN = new Imagen();
-                    if (!(datos.Lector["ImagenUrl"] is DBNull)) aux.IMAGEN.Url = (string)datos.Lector["ImagenUrl"];
+                    if (!(datos.Lector["Imagenes"] is DBNull)) aux.IMAGEN.Url = (string)datos.Lector["Imagenes"];
 
                     lista.Add(aux);
                 }
@@ -157,17 +158,13 @@ namespace negocio
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.setearConsulta("SELECT A.*, M.Descripcion AS MarcaDescripcion, CA.Descripcion AS CategoriaDescripcion, I.* " +
-                                     "FROM ARTICULOS A " +
-                                     "INNER JOIN MARCAS M ON A.IdMarca = M.Id " +
-                                     "INNER JOIN CATEGORIAS CA ON A.IdCategoria = CA.Id " +
-                                     "INNER JOIN IMAGENES I ON A.Id = I.IdArticulo " +
-                                     "WHERE A.Id = @Id");
+                datos.setearConsulta("SELECT A.*, M.Descripcion AS MarcaDescripcion, CA.Descripcion AS CategoriaDescripcion, STRING_AGG(I.ImagenUrl, ', ') AS Imagenes FROM ARTICULOS A INNER JOIN MARCAS M ON A.IdMarca = M.Id INNER JOIN CATEGORIAS CA ON A.IdCategoria = CA.Id INNER JOIN IMAGENES I ON A.Id = I.IdArticulo WHERE A.Id = @id GROUP BY A.Id, A.Codigo, A.Nombre, A.Descripcion, A.Precio, A.IdMarca, A.IdCategoria, M.Descripcion, CA.Descripcion;");
                 datos.setearParametro("@Id", id);
                 datos.ejecutarLectura();
 
                 if (datos.Lector.Read())
                 {
+
                     articulo = new Articulo
                     {
                         ID = Convert.ToInt32(datos.Lector["Id"]),
@@ -187,8 +184,8 @@ namespace negocio
                         },
                         IMAGEN = new Imagen
                         {
-                            Codigo = Convert.ToInt32(datos.Lector["IdArticulo"]),
-                            Url = datos.Lector["ImagenUrl"].ToString()
+                            Codigo = Convert.ToInt32(datos.Lector["Id"]),
+                            Url = datos.Lector["Imagenes"].ToString()
                         }
                     };
                 }

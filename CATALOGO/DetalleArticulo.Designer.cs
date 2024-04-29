@@ -43,6 +43,8 @@
             descInput = new TextBox();
             categoriaInput = new TextBox();
             precioInput = new TextBox();
+            SiguienteImagenButton = new Button();
+            AnteriorImagenButton = new Button();
             ((System.ComponentModel.ISupportInitialize)imagenDetalle).BeginInit();
             SuspendLayout();
             // 
@@ -168,8 +170,8 @@
             // 
             categoriaInput.Location = new Point(215, 266);
             categoriaInput.Name = "categoriaInput";
-            categoriaInput.Size = new Size(184, 23);
             categoriaInput.ReadOnly = true;
+            categoriaInput.Size = new Size(184, 23);
             categoriaInput.TabIndex = 15;
             // 
             // precioInput
@@ -180,11 +182,33 @@
             precioInput.Size = new Size(184, 23);
             precioInput.TabIndex = 17;
             // 
+            // SiguienteImagenButton
+            // 
+            SiguienteImagenButton.Location = new Point(652, 338);
+            SiguienteImagenButton.Name = "SiguienteImagenButton";
+            SiguienteImagenButton.Size = new Size(75, 23);
+            SiguienteImagenButton.TabIndex = 18;
+            SiguienteImagenButton.Text = "▶";
+            SiguienteImagenButton.UseVisualStyleBackColor = true;
+            SiguienteImagenButton.Click += SiguienteImagenButton_Click;
+            // 
+            // AnteriorImagenButton
+            // 
+            AnteriorImagenButton.Location = new Point(456, 338);
+            AnteriorImagenButton.Name = "AnteriorImagenButton";
+            AnteriorImagenButton.Size = new Size(75, 23);
+            AnteriorImagenButton.TabIndex = 19;
+            AnteriorImagenButton.Text = "◀";
+            AnteriorImagenButton.UseVisualStyleBackColor = true;
+            AnteriorImagenButton.Click += AnteriorImagenButton_Click;
+            // 
             // DetalleArticulo
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(AnteriorImagenButton);
+            Controls.Add(SiguienteImagenButton);
             Controls.Add(precioInput);
             Controls.Add(categoriaInput);
             Controls.Add(descInput);
@@ -225,5 +249,7 @@
         private TextBox descInput;
         private TextBox categoriaInput;
         private TextBox precioInput;
+        private Button SiguienteImagenButton;
+        private Button AnteriorImagenButton;
     }
 }

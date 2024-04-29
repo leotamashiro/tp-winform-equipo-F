@@ -6,6 +6,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Net;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -20,6 +21,8 @@ namespace CATALOGO
         private Articulo _articulo;
         private DataGridView dataGridPrincipal;
         private int _id;
+        private string[] urls;
+        private int indiceImagenActual;
         public DetalleArticulo(int id, DataGridView gridTable)
         {
             InitializeComponent();
@@ -40,7 +43,23 @@ namespace CATALOGO
                 marcaInput.Text = _articulo.MARCA.Descripcion.ToString();
                 categoriaInput.Text = _articulo.CATEGORIA.Descripcion.ToString();
                 precioInput.Text = string.Format("{0:0.00}", _articulo.PRECIO);
-                CargarImagen(_articulo.IMAGEN.Url.ToString());
+
+                urls = _articulo.IMAGEN.Url.Split(',');
+
+                await CargarImagen(urls[0]);
+
+                indiceImagenActual = 0;
+
+                if (urls.Length <= 1)
+                {
+                    SiguienteImagenButton.Visible = false;
+                    AnteriorImagenButton.Visible = false;
+                }
+                else
+                {
+                    SiguienteImagenButton.Visible = true;
+                    AnteriorImagenButton.Visible = true;
+                }
             }
             catch (Exception ex)
             {
@@ -52,12 +71,37 @@ namespace CATALOGO
         {
             try
             {
-                imagenDetalle.Load(url);
+                imagenDetalle.Load(url.Trim());
             }
             catch (Exception ex)
             {
+                Console.WriteLine("Error al cargar la imagen: " + ex.Message);
                 imagenDetalle.Load("https://img.freepik.com/vector-premium/vector-icono-imagen-predeterminado-pagina-imagen-faltante-diseno-sitio-web-o-aplicacion-movil-no-hay-foto-disponible_87543-11093.jpg");
             }
+        }
+
+        private async void SiguienteImagenButton_Click(object sender, EventArgs e)
+        {
+            indiceImagenActual++;
+
+            if (indiceImagenActual >= urls.Length)
+            {
+                indiceImagenActual = 0;
+            }
+
+            await CargarImagen(urls[indiceImagenActual]);
+        }
+
+        private async void AnteriorImagenButton_Click(object sender, EventArgs e)
+        {
+            indiceImagenActual--;
+
+            if (indiceImagenActual < 0)
+            {
+                indiceImagenActual = urls.Length - 1;
+            }
+
+            await CargarImagen(urls[indiceImagenActual]);
         }
 
         private void volverListadoBtn_Click(object sender, EventArgs e)
