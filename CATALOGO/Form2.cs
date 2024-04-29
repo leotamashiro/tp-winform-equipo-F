@@ -24,13 +24,13 @@ namespace CATALOGO
             InitializeComponent();
             dataGridPrincipal = dataGrid;
         }
-        public frmAgregar(Articulo articulo)
+        public frmAgregar(Articulo articulo, DataGridView dataGrid)
         {
             InitializeComponent();
             this.articulo = articulo;
             Text = "Modificar articulo";
+            dataGridPrincipal = dataGrid;
         }
-
         private void Form2_Load(object sender, EventArgs e)
         {
             MarcaService marcaService = new MarcaService();
@@ -107,9 +107,10 @@ namespace CATALOGO
                     negocio.agregar(articulo);
                     MessageBox.Show("Agregado Exitosamente");
                 }
-                Close();
                 List<Articulo> listaActualizada = negocio.ListarArticulos();
+                //dataGridPrincipal.DataSource = null;
                 dataGridPrincipal.DataSource = listaActualizada;
+                Close();
             }
             catch (Exception ex)
             {

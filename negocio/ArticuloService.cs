@@ -43,6 +43,8 @@ namespace negocio
                     nuevoId = Convert.ToInt32(datos.Lector["MaxId"]);
                 }
 
+                datos.cerrarConexion();
+
                 if (art.IMAGEN != null)
                 {
                     datos.setearConsulta("INSERT INTO IMAGENES (IdArticulo, ImagenUrl) VALUES (@idArticulo, @imagenUrl)");
@@ -68,19 +70,19 @@ namespace negocio
             {
                 datos.setearConsulta("UPDATE ARTICULOS SET CODIGO = @codigo, NOMBRE = @nombre, DESCRIPCION = @descripcion, IdMarca =@idMarca, IdCategoria=@idCategoria ,PRECIO = @precio WHERE ID = @id");
                 datos.setearParametro("@codigo", art.CODIGO);
+                datos.setearParametro("@id", art.ID);
                 datos.setearParametro("@nombre", art.NOMBRE);
                 datos.setearParametro("@descripcion", art.DESCRIPCION);
                 datos.setearParametro("@precio", art.PRECIO);
-                datos.setearParametro("@id", art.ID);
                 datos.setearParametro("@idMarca", art.MARCA.Id);
                 datos.setearParametro("@idCategoria", art.CATEGORIA.Id);
                 datos.ejecutarAccion();
 
                 if (art.IMAGEN != null)
                 {
-                    datos.setearConsulta("UPDATE IMAGENES SET ImagenUrl = @imagenUrl WHERE IdArticulo = @id");
+                    datos.setearConsulta("UPDATE IMAGENES SET ImagenUrl = @imagenUrl WHERE IdArticulo = @idArticulo");
                     datos.setearParametro("@imagenUrl", art.IMAGEN.Url);
-                    datos.setearParametro("@id", art.ID);
+                    datos.setearParametro("@idArticulo", art.ID);
                     datos.ejecutarAccion();
                 }
             }
@@ -127,16 +129,16 @@ namespace negocio
                 {
                     Articulo aux = new Articulo();
                     aux.ID = Convert.ToInt32(datos.Lector["Id"]);
-                    if (!(datos.Lector["Codigo"]is DBNull)) aux.CODIGO = (string)datos.Lector["Codigo"];
-                    if (!(datos.Lector["Nombre"] is DBNull)) aux.NOMBRE = (string)datos.Lector["Nombre"];
-                    if (!(datos.Lector["Descripcion"] is DBNull)) aux.DESCRIPCION = (string)datos.Lector["Descripcion"];
-                    if (!(datos.Lector["Precio"] is DBNull)) aux.PRECIO = Math.Truncate(100 * (decimal)datos.Lector["Precio"]) / 100;
+                    aux.CODIGO = (string)datos.Lector["Codigo"];
+                    aux.NOMBRE = (string)datos.Lector["Nombre"];
+                    aux.DESCRIPCION = (string)datos.Lector["Descripcion"];
+                    aux.PRECIO = Math.Truncate(100 * (decimal)datos.Lector["Precio"]) / 100;
                     aux.MARCA = new Marca();
-                    if (!(datos.Lector["Marca"] is DBNull)) aux.MARCA.Descripcion = (string)datos.Lector["Marca"];
+                    aux.MARCA.Descripcion = (string)datos.Lector["Marca"];
                     aux.CATEGORIA = new Categoria();
-                    if (!(datos.Lector["Categoria"] is DBNull)) aux.CATEGORIA.Descripcion = (string)datos.Lector["Categoria"];
+                    aux.CATEGORIA.Descripcion = (string)datos.Lector["Categoria"];
                     aux.IMAGEN = new Imagen();
-                    if (!(datos.Lector["ImagenUrl"] is DBNull)) aux.IMAGEN.Url = (string)datos.Lector["ImagenUrl"];
+                    aux.IMAGEN.Url = (string)datos.Lector["ImagenUrl"];
 
                     lista.Add(aux);
                 }

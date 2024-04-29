@@ -133,7 +133,7 @@ namespace CATALOGO
             else
             {
                 articuloSeleccionado = (Articulo)dataGridView1.CurrentRow.DataBoundItem;
-                frmAgregar modificar = new frmAgregar(articuloSeleccionado);
+                frmAgregar modificar = new frmAgregar(articuloSeleccionado, dataGridView1);
                 modificar.ShowDialog();
                 cargar();
             }
