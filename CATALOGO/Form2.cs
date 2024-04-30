@@ -51,8 +51,8 @@ namespace CATALOGO
                     txtPrecio.Text = articulo.PRECIO.ToString();
                     txtUrl.Text = articulo.IMAGEN.Url;
                     //CargarImagen(articulo.IMAGEN.Url);
-                    cboMarca.SelectedValue = articulo.MARCA.Id;
-                    cboCategoria.SelectedValue = articulo.CATEGORIA.Id;
+                    cboMarca.SelectedItem = articulo.MARCA.Id;
+                    cboCategoria.SelectedItem = articulo.CATEGORIA.Id;
                 }
             }
             catch (Exception ex)
