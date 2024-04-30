@@ -243,5 +243,26 @@ namespace CATALOGO
                 cargar();
             }
         }
+
+        private void agregarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CategoriaForm agregarCategoria = new CategoriaForm(0, dataGridView1, cboCategoria);
+            agregarCategoria.ShowDialog();
+            cargar();
+        }
+
+        private void modificarToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            CategoriaForm modificarCategoria = new CategoriaForm(1, dataGridView1, cboCategoria);
+            modificarCategoria.ShowDialog();
+            cargar();
+        }
+
+        private void eliminarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CategoriaForm eliminarCategoria = new CategoriaForm(2, dataGridView1, cboCategoria);
+            eliminarCategoria.ShowDialog();
+            cargar();
+        }
     }
 }

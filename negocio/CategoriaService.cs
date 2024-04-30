@@ -40,13 +40,13 @@ namespace negocio
             }
         }
 
-        public void agregarCategoria(Categoria cat)
+        public void agregarCategoria(string descripcion)
         {
             AccesoDatos datos = new AccesoDatos();
             try
             {
                 datos.setearConsulta("INSERT INTO CATEGORIAS (Descripcion) VALUES (@descripcion)");
-                datos.setearParametro("@descripcion", cat.Descripcion);
+                datos.setearParametro("@descripcion", descripcion);
 
                 datos.ejecutarAccion();
             }
