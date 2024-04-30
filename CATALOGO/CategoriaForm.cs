@@ -54,6 +54,7 @@ namespace CATALOGO
                 {
                     categoriaTitulo.Text = "Modificar Categoria";
                     accionCategoriaBtn.Text = "Modificar";
+                    labelCategoriaInput.Text = "Nuevo nombre";
                     try
                     {
                         cboCategoria.DataSource = categoriaService.listar();
@@ -70,6 +71,8 @@ namespace CATALOGO
                     Categoria categoria = new Categoria();
                     categoriaTitulo.Text = "Eliminar Categoria";
                     accionCategoriaBtn.Text = "Eliminar";
+                    labelCategoriaInput.Visible = false;
+                    inputCategoria.Visible = false;
                     try
                     {
                         cboCategoria.DataSource = categoriaService.listar();

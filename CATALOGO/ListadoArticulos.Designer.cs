@@ -34,11 +34,11 @@
             editarToolStripMenuItem = new ToolStripMenuItem();
             agregarArticuloToolStripMenuItem = new ToolStripMenuItem();
             modificarArticuloToolStripMenuItem = new ToolStripMenuItem();
-            agregarNuevaImagenToolStripMenuItem = new ToolStripMenuItem();
             categoriaToolStripMenuItem = new ToolStripMenuItem();
             agregarToolStripMenuItem = new ToolStripMenuItem();
             modificarToolStripMenuItem1 = new ToolStripMenuItem();
             eliminarToolStripMenuItem = new ToolStripMenuItem();
+            agregarNuevaImagenToolStripMenuItem = new ToolStripMenuItem();
             dataGridView1 = new DataGridView();
             button2 = new Button();
             cboMarcas = new ComboBox();
@@ -105,13 +105,6 @@
             modificarArticuloToolStripMenuItem.Text = "Modificar articulo";
             modificarArticuloToolStripMenuItem.Click += modificarArticuloToolStripMenuItem_Click;
             // 
-            // agregarNuevaImagenToolStripMenuItem
-            // 
-            agregarNuevaImagenToolStripMenuItem.Name = "agregarNuevaImagenToolStripMenuItem";
-            agregarNuevaImagenToolStripMenuItem.Size = new Size(194, 22);
-            agregarNuevaImagenToolStripMenuItem.Text = "Agregar nueva imagen";
-            agregarNuevaImagenToolStripMenuItem.Click += agregarNuevaImagenToolStripMenuItem_Click;
-            // 
             // categoriaToolStripMenuItem
             // 
             categoriaToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { agregarToolStripMenuItem, modificarToolStripMenuItem1, eliminarToolStripMenuItem });
@@ -122,23 +115,30 @@
             // agregarToolStripMenuItem
             // 
             agregarToolStripMenuItem.Name = "agregarToolStripMenuItem";
-            agregarToolStripMenuItem.Size = new Size(180, 22);
+            agregarToolStripMenuItem.Size = new Size(125, 22);
             agregarToolStripMenuItem.Text = "Agregar";
             agregarToolStripMenuItem.Click += agregarToolStripMenuItem_Click;
             // 
             // modificarToolStripMenuItem1
             // 
             modificarToolStripMenuItem1.Name = "modificarToolStripMenuItem1";
-            modificarToolStripMenuItem1.Size = new Size(180, 22);
+            modificarToolStripMenuItem1.Size = new Size(125, 22);
             modificarToolStripMenuItem1.Text = "Modificar";
             modificarToolStripMenuItem1.Click += modificarToolStripMenuItem1_Click;
             // 
             // eliminarToolStripMenuItem
             // 
             eliminarToolStripMenuItem.Name = "eliminarToolStripMenuItem";
-            eliminarToolStripMenuItem.Size = new Size(180, 22);
+            eliminarToolStripMenuItem.Size = new Size(125, 22);
             eliminarToolStripMenuItem.Text = "Eliminar";
             eliminarToolStripMenuItem.Click += eliminarToolStripMenuItem_Click;
+            // 
+            // agregarNuevaImagenToolStripMenuItem
+            // 
+            agregarNuevaImagenToolStripMenuItem.Name = "agregarNuevaImagenToolStripMenuItem";
+            agregarNuevaImagenToolStripMenuItem.Size = new Size(194, 22);
+            agregarNuevaImagenToolStripMenuItem.Text = "Agregar nueva imagen";
+            agregarNuevaImagenToolStripMenuItem.Click += agregarNuevaImagenToolStripMenuItem_Click;
             // 
             // dataGridView1
             // 
@@ -154,6 +154,7 @@
             dataGridView1.Size = new Size(643, 260);
             dataGridView1.TabIndex = 5;
             dataGridView1.SelectionChanged += dataGridView1_SelectionChanged;
+            dataGridView1.DataError += dataGridView1_DataError;
             // 
             // button2
             // 
