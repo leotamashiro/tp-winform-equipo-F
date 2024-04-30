@@ -227,5 +227,21 @@ namespace CATALOGO
 
             ocultarColumnas();
         }
+
+        private void agregarNuevaImagenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Articulo articuloSeleccionado = (Articulo)dataGridView1.CurrentRow.DataBoundItem;
+            if (dataGridView1.CurrentRow == null)
+            {
+                MessageBox.Show("NO SELECCIONASTE UN ARTICULO");
+            }
+            else
+            {
+                articuloSeleccionado = (Articulo)dataGridView1.CurrentRow.DataBoundItem;
+                AgregarImagen agregarNuevaImagen = new AgregarImagen(articuloSeleccionado, dataGridView1);
+                agregarNuevaImagen.ShowDialog();
+                cargar();
+            }
+        }
     }
 }

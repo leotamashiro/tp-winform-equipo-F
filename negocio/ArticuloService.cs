@@ -201,5 +201,25 @@ namespace negocio
             return articulo;
         }
 
+        public void agregarNuevaImagen(int id,string url)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta("INSERT INTO IMAGENES (IdArticulo, ImagenUrl) VALUES (@Id, @imagenUrl)");
+                datos.setearParametro("@Id", id);
+                datos.setearParametro("@imagenUrl", url);
+                datos.ejecutarLectura();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
+
     }
 }
