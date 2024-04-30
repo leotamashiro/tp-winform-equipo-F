@@ -267,12 +267,10 @@ namespace CATALOGO
 
         private void dataGridView1_DataError(object sender, DataGridViewDataErrorEventArgs e)
         {
-            // Si el error se produce debido a un valor NULL, lo manejamos aquí
             if (e.Exception is FormatException && e.Context == DataGridViewDataErrorContexts.Formatting)
             {
-                // Establecemos el valor de la celda como "NULL" para evitar el error de formato
                 dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = "NULL";
-                e.Cancel = true; // Cancelamos el error para evitar que se muestre al usuario
+                e.Cancel = true;
             }
         }
 

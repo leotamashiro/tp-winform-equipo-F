@@ -17,7 +17,6 @@ namespace negocio
         private List<Articulo> _listaArticulos;
         public ArticuloService()
         {
-            // Inicializa la lista de artículos
             _listaArticulos = new List<Articulo>();
         }
         public void agregar(Articulo art)
@@ -158,7 +157,7 @@ namespace negocio
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.setearConsulta("SELECT A.*, M.Descripcion AS MarcaDescripcion, CA.Descripcion AS CategoriaDescripcion, STRING_AGG(I.ImagenUrl, ', ') AS Imagenes FROM ARTICULOS A INNER JOIN MARCAS M ON A.IdMarca = M.Id INNER JOIN CATEGORIAS CA ON A.IdCategoria = CA.Id INNER JOIN IMAGENES I ON A.Id = I.IdArticulo WHERE A.Id = @id GROUP BY A.Id, A.Codigo, A.Nombre, A.Descripcion, A.Precio, A.IdMarca, A.IdCategoria, M.Descripcion, CA.Descripcion;");
+                datos.setearConsulta("SELECT A.*, M.Descripcion AS MarcaDescripcion, CA.Descripcion AS CategoriaDescripcion, STRING_AGG(I.ImagenUrl, ', ') AS Imagenes FROM ARTICULOS A LEFT JOIN MARCAS M ON A.IdMarca = M.Id LEFT JOIN CATEGORIAS CA ON A.IdCategoria = CA.Id LEFT JOIN IMAGENES I ON A.Id = I.IdArticulo WHERE A.Id = @id GROUP BY A.Id, A.Codigo, A.Nombre, A.Descripcion, A.Precio, A.IdMarca, A.IdCategoria, M.Descripcion, CA.Descripcion;");
                 datos.setearParametro("@Id", id);
                 datos.ejecutarLectura();
 

@@ -37,28 +37,42 @@ namespace CATALOGO
             try
             {
                 _articulo = articuloService.listarArticuloXID(_id);
-                codigoInput.Text = _articulo.CODIGO;
-                nombreInput.Text = _articulo.NOMBRE;
-                descInput.Text = _articulo.DESCRIPCION;
-                marcaInput.Text = _articulo.MARCA.Descripcion.ToString();
-                categoriaInput.Text = _articulo.CATEGORIA.Descripcion.ToString();
-                precioInput.Text = string.Format("{0:0.00}", _articulo.PRECIO);
-
-                urls = _articulo.IMAGEN.Url.Split(',');
-
-                await CargarImagen(urls[0]);
-
-                indiceImagenActual = 0;
-
-                if (urls.Length <= 1)
+                if (_articulo != null)
                 {
-                    SiguienteImagenButton.Visible = false;
-                    AnteriorImagenButton.Visible = false;
+                    codigoInput.Text = _articulo.CODIGO ?? string.Empty;
+                    nombreInput.Text = _articulo.NOMBRE ?? string.Empty;
+                    descInput.Text = _articulo.DESCRIPCION ?? string.Empty;
+                    marcaInput.Text = _articulo.MARCA?.Descripcion ?? string.Empty;
+                    categoriaInput.Text = _articulo.CATEGORIA?.Descripcion ?? string.Empty;
+                    precioInput.Text = _articulo.PRECIO != 0 ? string.Format("{0:0.00}", _articulo.PRECIO) : string.Empty;
+
+                    if (_articulo.IMAGEN != null && !string.IsNullOrEmpty(_articulo.IMAGEN.Url))
+                    {
+                        urls = _articulo.IMAGEN.Url.Split(',');
+                        await CargarImagen(urls[0]);
+
+                        indiceImagenActual = 0;
+
+                        if (urls.Length <= 1)
+                        {
+                            SiguienteImagenButton.Visible = false;
+                            AnteriorImagenButton.Visible = false;
+                        }
+                        else
+                        {
+                            SiguienteImagenButton.Visible = true;
+                            AnteriorImagenButton.Visible = true;
+                        }
+                    }
+                    else
+                    {
+                        SiguienteImagenButton.Visible = false;
+                        AnteriorImagenButton.Visible = false;
+                    }
                 }
                 else
                 {
-                    SiguienteImagenButton.Visible = true;
-                    AnteriorImagenButton.Visible = true;
+                    MessageBox.Show("No se encontró el artículo con el ID proporcionado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (Exception ex)
