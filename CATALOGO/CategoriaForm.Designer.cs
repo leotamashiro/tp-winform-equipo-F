@@ -39,9 +39,10 @@
             // 
             // accionCategoriaBtn
             // 
-            accionCategoriaBtn.Location = new Point(595, 348);
+            accionCategoriaBtn.Location = new Point(281, 256);
+            accionCategoriaBtn.Margin = new Padding(3, 4, 3, 4);
             accionCategoriaBtn.Name = "accionCategoriaBtn";
-            accionCategoriaBtn.Size = new Size(135, 47);
+            accionCategoriaBtn.Size = new Size(154, 63);
             accionCategoriaBtn.TabIndex = 0;
             accionCategoriaBtn.Text = "button1";
             accionCategoriaBtn.UseVisualStyleBackColor = true;
@@ -49,9 +50,10 @@
             // 
             // volverAtrasBtn
             // 
-            volverAtrasBtn.Location = new Point(84, 349);
+            volverAtrasBtn.Location = new Point(37, 257);
+            volverAtrasBtn.Margin = new Padding(3, 4, 3, 4);
             volverAtrasBtn.Name = "volverAtrasBtn";
-            volverAtrasBtn.Size = new Size(132, 46);
+            volverAtrasBtn.Size = new Size(151, 61);
             volverAtrasBtn.TabIndex = 1;
             volverAtrasBtn.Text = "Volver";
             volverAtrasBtn.UseVisualStyleBackColor = true;
@@ -59,52 +61,55 @@
             // 
             // inputCategoria
             // 
-            inputCategoria.Location = new Point(310, 208);
+            inputCategoria.Location = new Point(121, 179);
+            inputCategoria.Margin = new Padding(3, 4, 3, 4);
             inputCategoria.Name = "inputCategoria";
-            inputCategoria.Size = new Size(188, 23);
+            inputCategoria.Size = new Size(214, 27);
             inputCategoria.TabIndex = 2;
             // 
             // categoriaTitulo
             // 
             categoriaTitulo.AutoSize = true;
             categoriaTitulo.Font = new Font("Segoe UI", 14F);
-            categoriaTitulo.Location = new Point(84, 35);
+            categoriaTitulo.Location = new Point(12, 9);
             categoriaTitulo.Name = "categoriaTitulo";
-            categoriaTitulo.Size = new Size(94, 25);
+            categoriaTitulo.Size = new Size(116, 32);
             categoriaTitulo.TabIndex = 3;
             categoriaTitulo.Text = "Categoria";
             // 
             // modificarSelectItem
             // 
             modificarSelectItem.AutoSize = true;
-            modificarSelectItem.Location = new Point(310, 104);
+            modificarSelectItem.Location = new Point(143, 71);
             modificarSelectItem.Name = "modificarSelectItem";
-            modificarSelectItem.Size = new Size(138, 15);
+            modificarSelectItem.Size = new Size(175, 20);
             modificarSelectItem.TabIndex = 5;
             modificarSelectItem.Text = "Seleccione una categoria";
             // 
             // labelCategoriaInput
             // 
             labelCategoriaInput.AutoSize = true;
-            labelCategoriaInput.Location = new Point(310, 180);
+            labelCategoriaInput.Location = new Point(167, 155);
             labelCategoriaInput.Name = "labelCategoriaInput";
-            labelCategoriaInput.Size = new Size(38, 15);
+            labelCategoriaInput.Size = new Size(50, 20);
             labelCategoriaInput.TabIndex = 6;
             labelCategoriaInput.Text = "label2";
             // 
             // cboCategoria
             // 
+            cboCategoria.DropDownStyle = ComboBoxStyle.DropDownList;
             cboCategoria.FormattingEnabled = true;
-            cboCategoria.Location = new Point(310, 133);
+            cboCategoria.Location = new Point(121, 95);
+            cboCategoria.Margin = new Padding(3, 4, 3, 4);
             cboCategoria.Name = "cboCategoria";
-            cboCategoria.Size = new Size(188, 23);
+            cboCategoria.Size = new Size(214, 28);
             cboCategoria.TabIndex = 7;
             // 
             // CategoriaForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(478, 376);
             Controls.Add(cboCategoria);
             Controls.Add(labelCategoriaInput);
             Controls.Add(modificarSelectItem);
@@ -112,8 +117,9 @@
             Controls.Add(inputCategoria);
             Controls.Add(volverAtrasBtn);
             Controls.Add(accionCategoriaBtn);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "CategoriaForm";
-            Text = "CategoriaForm";
+            Text = "Administración de categorias";
             Load += CategoriaForm_Load;
             ResumeLayout(false);
             PerformLayout();

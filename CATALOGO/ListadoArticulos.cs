@@ -298,23 +298,26 @@ namespace CATALOGO
 
         private void agregarToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            MarcaForm agregarMarca = new MarcaForm(0, dataGridView1, cboCategoria);
+            MarcaForm agregarMarca = new MarcaForm(0, dataGridView1, cboMarcas);
             agregarMarca.ShowDialog();
             cargar();
+            filtrosDesplegables();
         }
 
         private void modificarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MarcaForm agregarMarca = new MarcaForm(1, dataGridView1, cboCategoria);
-            agregarMarca.ShowDialog();
+            MarcaForm modificarMarca = new MarcaForm(1, dataGridView1, cboMarcas);
+            modificarMarca.ShowDialog();
             cargar();
+            filtrosDesplegables();
         }
 
         private void eliminarToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            MarcaForm agregarMarca = new MarcaForm(2, dataGridView1, cboCategoria);
-            agregarMarca.ShowDialog();
+            MarcaForm eliminarMarca = new MarcaForm(2, dataGridView1, cboMarcas);
+            eliminarMarca.ShowDialog();
             cargar();
+            filtrosDesplegables();
         }
         private void dataGridView1_DataError(object sender, DataGridViewDataErrorEventArgs e)
         {
