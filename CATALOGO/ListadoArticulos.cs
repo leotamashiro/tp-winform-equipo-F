@@ -210,14 +210,15 @@ namespace CATALOGO
 
             try
             {
-                if (filtroMarcas != "")
+                if (!string.IsNullOrWhiteSpace(filtroCategorias))
                 {
-                    if (filtroCategorias != "")
+                    if (!string.IsNullOrWhiteSpace(filtroCategorias))
                     {
                         listarArticuloFiltrada = listarArticulo.FindAll(articulo =>
-                            articulo.MARCA?.Descripcion != null && articulo.MARCA.Descripcion.ToUpper().Contains(filtroMarcas.ToUpper()) &&
-                            articulo.CATEGORIA?.Descripcion != null && articulo.CATEGORIA.Descripcion.ToUpper().Contains(filtroCategorias.ToUpper())
-                        );
+                            articulo.MARCA?.Descripcion != null 
+                            && articulo.MARCA.Descripcion.ToUpper().Contains(filtroMarcas.ToUpper()) 
+                            && articulo.CATEGORIA?.Descripcion != null 
+                            && articulo.CATEGORIA.Descripcion.ToUpper().Contains(filtroCategorias.ToUpper()));
                     }
                     else
                     {
@@ -245,15 +246,14 @@ namespace CATALOGO
 
         private void btnReset_Click(object sender, EventArgs e)
         {
-            List<Articulo> listarArticuloOriginal;
-
-            listarArticuloOriginal = listarArticulo;
-
+            
             cboMarcas.SelectedIndex = -1;
             cboCategoria.SelectedIndex = -1;
 
             dataGridView1.DataSource = null;
-            dataGridView1.DataSource = listarArticuloOriginal;
+            dataGridView1.DataSource = listarArticulo;
+
+            cargar();
 
             ocultarColumnas();
         }
@@ -279,6 +279,7 @@ namespace CATALOGO
             CategoriaForm agregarCategoria = new CategoriaForm(0, dataGridView1, cboCategoria);
             agregarCategoria.ShowDialog();
             cargar();
+            filtrosDesplegables();
         }
 
         private void modificarToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -286,6 +287,7 @@ namespace CATALOGO
             CategoriaForm modificarCategoria = new CategoriaForm(1, dataGridView1, cboCategoria);
             modificarCategoria.ShowDialog();
             cargar();
+            filtrosDesplegables();
         }
 
         private void eliminarToolStripMenuItem_Click(object sender, EventArgs e)
@@ -293,8 +295,8 @@ namespace CATALOGO
             CategoriaForm eliminarCategoria = new CategoriaForm(2, dataGridView1, cboCategoria);
             eliminarCategoria.ShowDialog();
             cargar();
+            filtrosDesplegables();
         }
-
 
         private void agregarToolStripMenuItem1_Click(object sender, EventArgs e)
         {
