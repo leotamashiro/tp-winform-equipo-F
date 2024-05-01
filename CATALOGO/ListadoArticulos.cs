@@ -161,64 +161,111 @@ namespace CATALOGO
 
         private void cboMarcas_SelectedIndexChanged(object sender, EventArgs e)
         {
+            //string filtroMarcas = cboMarcas.Text;
+            //string filtroCategorias = cboCategoria.Text;
+            //
+            //List<Articulo> listarArticuloFiltrada;
+            //
+            //if (filtroMarcas != "")
+            //{
+            //    if (filtroCategorias != "")
+            //    {
+            //        listarArticuloFiltrada = listarArticulo.FindAll(articulo => articulo.MARCA.Descripcion.ToUpper().Contains(filtroMarcas.ToUpper()) && articulo.CATEGORIA.Descripcion.ToUpper().Contains(filtroCategorias.ToUpper()));
+            //    }
+            //    else
+            //    {
+            //        listarArticuloFiltrada = listarArticulo.FindAll(articulo => articulo.MARCA.Descripcion.ToUpper().Contains(filtroMarcas.ToUpper()));
+            //    }
+            //}
+            //
+            //else { listarArticuloFiltrada = listarArticulo; }
+            //
+            //dataGridView1.DataSource = null;
+            //dataGridView1.DataSource = listarArticuloFiltrada;
+            //
+            //ocultarColumnas();
+
+
             string filtroMarcas = cboMarcas.Text;
             string filtroCategorias = cboCategoria.Text;
 
             List<Articulo> listarArticuloFiltrada;
 
-            if (filtroMarcas != "")
+            try
             {
-                if (filtroCategorias != "")
+                if (filtroMarcas != "")
                 {
-                    listarArticuloFiltrada = listarArticulo.FindAll(articulo => articulo.MARCA.Descripcion.ToUpper().Contains(filtroMarcas.ToUpper()) && articulo.CATEGORIA.Descripcion.ToUpper().Contains(filtroCategorias.ToUpper()));
+                    if (filtroCategorias != "")
+                    {
+                        listarArticuloFiltrada = listarArticulo.FindAll(articulo =>
+                            articulo.MARCA?.Descripcion != null && articulo.MARCA.Descripcion.ToUpper().Contains(filtroMarcas.ToUpper()) &&
+                            articulo.CATEGORIA?.Descripcion != null && articulo.CATEGORIA.Descripcion.ToUpper().Contains(filtroCategorias.ToUpper())
+                        );
+                    }
+                    else
+                    {
+                        listarArticuloFiltrada = listarArticulo.FindAll(articulo =>
+                            articulo.MARCA?.Descripcion != null && articulo.MARCA.Descripcion.ToUpper().Contains(filtroMarcas.ToUpper()) &&
+                            articulo.CATEGORIA != null);
+                    }
                 }
                 else
                 {
-                    listarArticuloFiltrada = listarArticulo.FindAll(articulo => articulo.MARCA.Descripcion.ToUpper().Contains(filtroMarcas.ToUpper()));
+                    listarArticuloFiltrada = listarArticulo;
                 }
+
+                dataGridView1.DataSource = null;
+                dataGridView1.DataSource = listarArticuloFiltrada;
+
+                ocultarColumnas();
             }
-
-            else { listarArticuloFiltrada = listarArticulo; }
-
-            dataGridView1.DataSource = null;
-            dataGridView1.DataSource = listarArticuloFiltrada;
-
-            ocultarColumnas();
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         private void cboCategoria_SelectedIndexChanged(object sender, EventArgs e)
         {
+
             string filtroMarcas = cboMarcas.Text;
             string filtroCategorias = cboCategoria.Text;
 
             List<Articulo> listarArticuloFiltrada;
 
-            if (filtroMarcas != "")
+            try
             {
-                if (filtroCategorias != "")
+                if (filtroMarcas != "")
                 {
-                    listarArticuloFiltrada = listarArticulo.FindAll(articulo =>
-                        articulo.MARCA?.Descripcion.ToUpper().Contains(filtroMarcas.ToUpper()) == true &&
-                        (articulo.CATEGORIA != null && articulo.CATEGORIA.Descripcion.ToUpper().Contains(filtroCategorias.ToUpper()))
-                    );
+                    if (filtroCategorias != "")
+                    {
+                        listarArticuloFiltrada = listarArticulo.FindAll(articulo =>
+                            articulo.MARCA?.Descripcion != null && articulo.MARCA.Descripcion.ToUpper().Contains(filtroMarcas.ToUpper()) &&
+                            articulo.CATEGORIA?.Descripcion != null && articulo.CATEGORIA.Descripcion.ToUpper().Contains(filtroCategorias.ToUpper())
+                        );
+                    }
+                    else
+                    {
+                        listarArticuloFiltrada = listarArticulo.FindAll(articulo =>
+                            articulo.MARCA?.Descripcion != null && articulo.MARCA.Descripcion.ToUpper().Contains(filtroMarcas.ToUpper()) &&
+                            articulo.CATEGORIA != null);
+                    }
                 }
                 else
                 {
-                    listarArticuloFiltrada = listarArticulo.FindAll(articulo =>
-                        articulo.MARCA?.Descripcion.ToUpper().Contains(filtroMarcas.ToUpper()) == true &&
-                        articulo.CATEGORIA != null
-                    );
+                    listarArticuloFiltrada = listarArticulo;
                 }
+
+                dataGridView1.DataSource = null;
+                dataGridView1.DataSource = listarArticuloFiltrada;
+
+                ocultarColumnas();
             }
-            else
+            catch (Exception ex)
             {
-                listarArticuloFiltrada = listarArticulo;
+                throw ex;
             }
 
-            dataGridView1.DataSource = null;
-            dataGridView1.DataSource = listarArticuloFiltrada;
-
-            ocultarColumnas();
         }
 
         private void btnReset_Click(object sender, EventArgs e)
