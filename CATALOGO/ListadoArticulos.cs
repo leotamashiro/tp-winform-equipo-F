@@ -197,15 +197,23 @@ namespace CATALOGO
             {
                 if (filtroCategorias != "")
                 {
-                    listarArticuloFiltrada = listarArticulo.FindAll(articulo => articulo.MARCA.Descripcion.ToUpper().Contains(filtroMarcas.ToUpper()) && articulo.CATEGORIA.Descripcion.ToUpper().Contains(filtroCategorias.ToUpper()));
+                    listarArticuloFiltrada = listarArticulo.FindAll(articulo =>
+                        articulo.MARCA?.Descripcion.ToUpper().Contains(filtroMarcas.ToUpper()) == true &&
+                        (articulo.CATEGORIA != null && articulo.CATEGORIA.Descripcion.ToUpper().Contains(filtroCategorias.ToUpper()))
+                    );
                 }
                 else
                 {
-                    listarArticuloFiltrada = listarArticulo.FindAll(articulo => articulo.MARCA.Descripcion.ToUpper().Contains(filtroMarcas.ToUpper()));
+                    listarArticuloFiltrada = listarArticulo.FindAll(articulo =>
+                        articulo.MARCA?.Descripcion.ToUpper().Contains(filtroMarcas.ToUpper()) == true &&
+                        articulo.CATEGORIA != null
+                    );
                 }
             }
-
-            else { listarArticuloFiltrada = listarArticulo; }
+            else
+            {
+                listarArticuloFiltrada = listarArticulo;
+            }
 
             dataGridView1.DataSource = null;
             dataGridView1.DataSource = listarArticuloFiltrada;
