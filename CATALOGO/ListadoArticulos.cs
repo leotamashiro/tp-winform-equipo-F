@@ -161,31 +161,6 @@ namespace CATALOGO
 
         private void cboMarcas_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //string filtroMarcas = cboMarcas.Text;
-            //string filtroCategorias = cboCategoria.Text;
-            //
-            //List<Articulo> listarArticuloFiltrada;
-            //
-            //if (filtroMarcas != "")
-            //{
-            //    if (filtroCategorias != "")
-            //    {
-            //        listarArticuloFiltrada = listarArticulo.FindAll(articulo => articulo.MARCA.Descripcion.ToUpper().Contains(filtroMarcas.ToUpper()) && articulo.CATEGORIA.Descripcion.ToUpper().Contains(filtroCategorias.ToUpper()));
-            //    }
-            //    else
-            //    {
-            //        listarArticuloFiltrada = listarArticulo.FindAll(articulo => articulo.MARCA.Descripcion.ToUpper().Contains(filtroMarcas.ToUpper()));
-            //    }
-            //}
-            //
-            //else { listarArticuloFiltrada = listarArticulo; }
-            //
-            //dataGridView1.DataSource = null;
-            //dataGridView1.DataSource = listarArticuloFiltrada;
-            //
-            //ocultarColumnas();
-
-
             string filtroMarcas = cboMarcas.Text;
             string filtroCategorias = cboCategoria.Text;
 
@@ -320,6 +295,27 @@ namespace CATALOGO
             cargar();
         }
 
+
+        private void agregarToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            MarcaForm agregarMarca = new MarcaForm(0, dataGridView1, cboCategoria);
+            agregarMarca.ShowDialog();
+            cargar();
+        }
+
+        private void modificarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MarcaForm agregarMarca = new MarcaForm(1, dataGridView1, cboCategoria);
+            agregarMarca.ShowDialog();
+            cargar();
+        }
+
+        private void eliminarToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            MarcaForm agregarMarca = new MarcaForm(2, dataGridView1, cboCategoria);
+            agregarMarca.ShowDialog();
+            cargar();
+        }
         private void dataGridView1_DataError(object sender, DataGridViewDataErrorEventArgs e)
         {
             if (e.Exception is FormatException && e.Context == DataGridViewDataErrorContexts.Formatting)
@@ -328,6 +324,5 @@ namespace CATALOGO
                 e.Cancel = true;
             }
         }
-
     }
 }
