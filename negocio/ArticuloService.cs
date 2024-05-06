@@ -5,7 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Reflection;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
 using dominio;
 using System.Text.RegularExpressions;
